@@ -1,2 +1,2 @@
 # PetGram
-Social media for our furr friends
+Social media for our furry friends
