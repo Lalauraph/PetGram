@@ -10,4 +10,3 @@ With a focus on community quality, Petgram aims to create a positive and enrichi
 
 More info about petgram: https://www.notion.so/PetGram-1623136f46ef454fbfc9be56341a682b?pvs=4
 
-Test
