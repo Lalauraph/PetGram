@@ -1,4 +1,5 @@
-// import styles from './review-card.css';
+import styles from './review-card.css';
+
 export enum Attribute7 {
 	'profilePicture' = 'profilePicture',
 	'postPicture' = 'postPicture',
