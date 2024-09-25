@@ -1,6 +1,6 @@
-import styles from './profile-banner.css';
+// import styles from './profile-banner.css';
 
-export enum Attribute {
+export enum Attribute4 {
 	'profilePic' = 'profilePic',
 	'name' = 'name',
 }
@@ -15,7 +15,7 @@ export class profileBanner extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		const attrs: Record<Attribute, null> = {
+		const attrs: Record<Attribute4, null> = {
 			profilePic: null,
 			name: null,
 		};
@@ -28,10 +28,10 @@ export class profileBanner extends HTMLElement {
 
 	attributeChangedCallback(propName: string, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
-			case Attribute.profilePic:
+			case Attribute4.profilePic:
 				this.profilePic = newValue;
 				break;
-			case Attribute.name:
+			case Attribute4.name:
 				this.name = newValue;
 				break;
 			default:
