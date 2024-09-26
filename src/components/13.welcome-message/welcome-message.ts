@@ -37,14 +37,18 @@ export class welcomeMessage extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-      <style>
-      ${styles}
-  </style>
-  <section class="welcome-message">
-	<div class="message__user">
-      <h2>Welcome back  ${this.name}. Heres what your PetGram friends have been doing...</h2></div>
-  </section>
-      `;
+			  <style>
+			  ${styles}
+			  </style>
+			  <section class="welcome-message">
+				<div class="message__user">
+				<div class="messageuser">
+				  <h2>Welcome back <span>${this.name}</span>.</h2>
+				</div>
+				  <p>Here’s what your PetGram friends have been doing...</p>
+				</div>
+			  </section>
+			`;
 		}
 	}
 }
