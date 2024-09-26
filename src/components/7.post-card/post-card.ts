@@ -73,6 +73,7 @@ export class postCard extends HTMLElement {
       <style>
         ${styles}
       </style>
+	  <section class="cards-container">
       <section class="post-card">
         <header>
           <div class="user-info">
@@ -92,6 +93,7 @@ export class postCard extends HTMLElement {
           </div>
         </div>
       </section>
+	</section>
       `;
     }
   }
