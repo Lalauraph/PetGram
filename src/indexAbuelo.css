@@ -1,0 +1,28 @@
+
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+
