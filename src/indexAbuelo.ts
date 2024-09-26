@@ -53,11 +53,10 @@ class AppContainer extends HTMLElement {
 			this.profileBanner.forEach((profileBanner) => {
 				this.shadowRoot?.appendChild(profileBanner);
 			});
-			this.shadowRoot?.appendChild(this.addPostButton);
 			this.welcomeMessage.forEach((welcomeMessage) => {
 				this.shadowRoot?.appendChild(welcomeMessage);
 			});
-
+			this.shadowRoot?.appendChild(this.addPostButton);
 			this.postCard.forEach((postCard) => {
 				this.shadowRoot?.appendChild(postCard);
 			});
