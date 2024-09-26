@@ -4,11 +4,13 @@ import './components/indexPadre';
 import { profileBanner } from './components/4.profile-banner/profile-banner';
 import { postCard } from './components/7.post-card/post-card';
 import { welcomeMessage } from './components/13.welcome-message/welcome-message';
+import { addPostButton } from './components/6.add-post-button/add-post-button';
 // Crear el App container
 class AppContainer extends HTMLElement {
 	postCard: postCard[] = [];
 	profileBanner: profileBanner[] = [];
 	welcomeMessage: welcomeMessage[] = [];
+	addPostButton!: addPostButton;
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -37,6 +39,8 @@ class AppContainer extends HTMLElement {
 			welcomeMessage.name = user.name;
 			this.welcomeMessage.push(welcomeMessage);
 		});
+
+		this.addPostButton = document.createElement('add-post-button') as addPostButton;
 	}
 
 	connectedCallback() {
@@ -52,6 +56,7 @@ class AppContainer extends HTMLElement {
 			this.welcomeMessage.forEach((welcomeMessage) => {
 				this.shadowRoot?.appendChild(welcomeMessage);
 			});
+			this.shadowRoot?.appendChild(this.addPostButton);
 			this.postCard.forEach((postCard) => {
 				this.shadowRoot?.appendChild(postCard);
 			});
