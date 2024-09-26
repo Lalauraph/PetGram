@@ -51,10 +51,6 @@ export class profileBanner extends HTMLElement {
             <img class="Profile-Pic" src="${this.profilePic}" alt="Profile Pic">
 						<h3>${this.name}</h3>
           </div>
-          <img id="logo" src="https://i.imgur.com/lvK6X2s.png">
-          <form id="search-form">
-            <input type="text" name="search" placeholder="Search...">
-          </form>
         </section>
       `;
 		}
