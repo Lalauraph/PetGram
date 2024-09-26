@@ -1,13 +1,14 @@
 import { PostCard } from './data/dataPostCard';
 import { Profile } from './data/dataProfile';
 import './components/indexPadre';
-import { profileBanner, Attribute4 } from './components/4.profile-banner/profile-banner';
-import { postCard } from './components/indexPadre';
-
+import { profileBanner } from './components/4.profile-banner/profile-banner';
+import { postCard } from './components/7.post-card/post-card';
+import { welcomeMessage } from './components/13.welcome-message/welcome-message';
 // Crear el App container
 class AppContainer extends HTMLElement {
 	postCard: postCard[] = [];
 	profileBanner: profileBanner[] = [];
+	welcomeMessage: welcomeMessage[] = [];
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -30,6 +31,12 @@ class AppContainer extends HTMLElement {
 			postCard.caption = card.caption;
 			this.postCard.push(postCard);
 		});
+
+		Profile.forEach((user) => {
+			const welcomeMessage = document.createElement('welcome-message') as welcomeMessage;
+			welcomeMessage.name = user.name;
+			this.welcomeMessage.push(welcomeMessage);
+		});
 	}
 
 	connectedCallback() {
@@ -41,6 +48,9 @@ class AppContainer extends HTMLElement {
 			// this.shadowRoot.innerHTML = `<h1>TEST</h1>`;
 			this.profileBanner.forEach((profileBanner) => {
 				this.shadowRoot?.appendChild(profileBanner);
+			});
+			this.welcomeMessage.forEach((welcomeMessage) => {
+				this.shadowRoot?.appendChild(welcomeMessage);
 			});
 			this.postCard.forEach((postCard) => {
 				this.shadowRoot?.appendChild(postCard);
