@@ -5,7 +5,7 @@ interface ProfileShape {
 
 export const Profile: ProfileShape[] = [
 	{
-		profilePic: 'https://i.pinimg.com/564x/22/53/2a/22532a47c18040e966419fd3b4b8c761.jpg',
+		profilePic: 'https://i.pinimg.com/564x/b3/7d/db/b37ddb952632f47a6880bfdee583ad94.jpg',
 		name: 'Toby',
 	},
 ];
