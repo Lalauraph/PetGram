@@ -1,6 +1,6 @@
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Oculta el scroll horizontal */
+    overflow-x: hidden; 
     margin: 0;
     padding: 0;
 }
@@ -11,7 +11,7 @@ html, body {
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
-    box-sizing: border-box; /* Asegura que padding y border no expandan el ancho */
+    box-sizing: border-box; 
 }
 
 .post-card {
@@ -26,11 +26,11 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño */
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .post-card {
-        width: 100%; /* Cambia a una sola columna en pantallas medianas */
+        width: 100%; 
     }
 }
