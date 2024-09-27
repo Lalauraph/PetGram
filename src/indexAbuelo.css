@@ -1,28 +1,36 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Oculta el scroll horizontal */
+    margin: 0;
+    padding: 0;
+}
 
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que padding y border no expandan el ancho */
+}
+
+.post-card {
+    width: calc(50% - 20px);
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    background-color: #4BACD7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño */
+}
 
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .content {
-        padding: 10px;
+    .post-card {
+        width: 100%; /* Cambia a una sola columna en pantallas medianas */
     }
 }
-
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-}
-
-
