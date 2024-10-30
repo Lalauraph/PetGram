@@ -1,5 +1,5 @@
 .custom-button {
-    background-color: #ffc107; /* Color amarillo */
+    background-color: #ffc107; 
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -12,5 +12,5 @@
 
 
 .custom-button:hover {
-    background-color: #e6ac00; /* Color para hover */
+    background-color: #e6ac00; 
   }
