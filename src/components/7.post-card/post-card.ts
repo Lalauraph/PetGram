@@ -1,75 +1,75 @@
 import styles from './post-card.css';
 
 export enum Attribute7 {
-  'profilePicture' = 'profilePicture',
-  'postPicture' = 'postPicture',
-  'name' = 'name',
-  'breed' = 'breed',
-  'caption' = 'caption',
-  'likes' = 'likes',
+	'profilePicture' = 'profilePicture',
+	'postPicture' = 'postPicture',
+	'name' = 'name',
+	'breed' = 'breed',
+	'caption' = 'caption',
+	'likes' = 'likes',
 }
 
 export class postCard extends HTMLElement {
-  profilePicture?: string;
-  postPicture?: string;
-  name?: string;
-  breed?: string;
-  caption?: string;
-  likes: number;
+	profilePicture?: string;
+	postPicture?: string;
+	name?: string;
+	breed?: string;
+	caption?: string;
+	likes: number;
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.likes = 0; // Valor predeterminado para likes
-  }
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+		this.likes = 0; // Valor predeterminado para likes
+	}
 
-  static get observedAttributes() {
-    const attrs: Record<Attribute7, null> = {
-      profilePicture: null,
-      postPicture: null,
-      name: null,
-      breed: null,
-      caption: null,
-      likes: null,
-    };
-    return Object.keys(attrs);
-  }
+	static get observedAttributes() {
+		const attrs: Record<Attribute7, null> = {
+			profilePicture: null,
+			postPicture: null,
+			name: null,
+			breed: null,
+			caption: null,
+			likes: null,
+		};
+		return Object.keys(attrs);
+	}
 
-  connectedCallback() {
-    this.render();
-    this.addLikeButtonListener();
-  }
+	connectedCallback() {
+		this.render();
+		this.addLikeButtonListener();
+	}
 
-  attributeChangedCallback(propName: Attribute7, oldValue: string | undefined, newValue: string | undefined) {
-    switch (propName) {
-      case Attribute7.likes:
-        this.likes = newValue ? Number(newValue) : 0;
-        break;
-      default:
-        this[propName] = newValue;
-        break;
-    }
-    this.render();
-  }
+	attributeChangedCallback(propName: Attribute7, oldValue: string | undefined, newValue: string | undefined) {
+		switch (propName) {
+			case Attribute7.likes:
+				this.likes = newValue ? Number(newValue) : 0;
+				break;
+			default:
+				this[propName] = newValue;
+				break;
+		}
+		this.render();
+	}
 
-  addLikeButtonListener() {
-    const likeButton = this.shadowRoot?.querySelector('.like-button');
-    likeButton?.addEventListener('click', () => {
-      this.likes += 1;
-      this.updateLikes();
-    });
-  }
+	addLikeButtonListener() {
+		const likeButton = this.shadowRoot?.querySelector('.like-button');
+		likeButton?.addEventListener('click', () => {
+			this.likes += 1;
+			this.updateLikes();
+		});
+	}
 
-  updateLikes() {
-    const likesElement = this.shadowRoot?.querySelector('.likes-count');
-    if (likesElement) {
-      likesElement.textContent = String(this.likes);
-    }
-  }
+	updateLikes() {
+		const likesElement = this.shadowRoot?.querySelector('.likes-count');
+		if (likesElement) {
+			likesElement.textContent = String(this.likes);
+		}
+	}
 
-  render() {
-    if (this.shadowRoot) {
-      this.shadowRoot.innerHTML = `
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
       <style>
         ${styles}
       </style>
@@ -95,8 +95,8 @@ export class postCard extends HTMLElement {
       </section>
 	</section>
       `;
-    }
-  }
+		}
+	}
 }
 
 customElements.define('post-card', postCard);

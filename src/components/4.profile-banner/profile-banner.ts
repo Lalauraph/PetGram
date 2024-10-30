@@ -50,7 +50,7 @@ export class profileBanner extends HTMLElement {
           <div class="user">
             <img class="Profile-Pic" src="${this.profilePic}" alt="Profile Pic">
 						<h3>${this.name}</h3>
-						<img id="logo" src="https://drive.google.com/drive/u/0/home">
+           <img id="logo" src="https://i.imgur.com/UBGWQWp.png">
           </div>
           <div class="search-container">
             <input class="search-bar" type="text" placeholder="Search">
