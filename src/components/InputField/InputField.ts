@@ -42,4 +42,4 @@ export class InputField extends HTMLElement {
 	}
 }
 
-
+customElements.define('input-field', InputField);
