@@ -1,5 +1,5 @@
 import { InputField } from '../../components/InputField/InputField';
-import { LoginButton } from '../../components/LoginButton/LoginButton';
+import { LoginButton } from '../../components/loginButton/loginButton';
 import { LoginLink } from '../../components/LoginLink/LoginLink';
 import styles from './login-screen.css';
 

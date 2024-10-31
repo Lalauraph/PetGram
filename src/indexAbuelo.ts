@@ -1,10 +1,10 @@
 import { PostCard } from './data/dataPostCard';
 import { Profile } from './data/dataProfile';
 import './components/indexPadre';
-import { profileBanner } from './components/4.profile-banner/profile-banner';
-import { postCard } from './components/7.post-card/post-card';
-import { welcomeMessage } from './components/13.welcome-message/welcome-message';
-import { addPostButton } from './components/6.add-post-button/add-post-button';
+import { profileBanner } from './components/profileBanner/profileBanner';
+import { postCard } from './components/postCard/postCard';
+import { welcomeMessage } from './components/welcomeMessage/welcomeMessage';
+import { addPostButton } from './components/addPostButton/addPostButton';
 
 // Crear el App container
 class AppContainer extends HTMLElement {
