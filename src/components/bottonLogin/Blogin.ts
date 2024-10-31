@@ -1,6 +1,6 @@
-import styles from './modal-container.css';
+import styles from './login-button.css';
 
-export class ModalContainer extends HTMLElement {
+export class LoginButton extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -16,15 +16,10 @@ export class ModalContainer extends HTMLElement {
 				<style>
 					${styles}
 				</style>
-				<div class="modal-overlay">
-					<div class="modal-content">
-						<button class="close-button">✖</button>
-						<slot></slot> <!-- Espacio para otros componentes dentro del modal -->
-					</div>
-				</div>
+				<button class="login-button">Log in!</button>
 			`;
 		}
 	}
 }
 
-customElements.define('modal-container', ModalContainer);
+customElements.define('login-button', LoginButton);
