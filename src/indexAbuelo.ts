@@ -3,7 +3,7 @@ import { Profile } from './data/dataProfile';
 import './components/indexPadre';
 import { profileBanner } from './components/4.profile-banner/profile-banner';
 import { postCard } from './components/7.post-card/post-card';
-import { welcomeMessage } from './components/7.post-card/13.welcome-message/welcome-message';
+import { welcomeMessage } from './components/13.welcome-message/welcome-message';
 import { addPostButton } from './components/6.add-post-button/add-post-button';
 
 // Crear el App container
