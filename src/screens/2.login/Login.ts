@@ -1,4 +1,7 @@
 
+import { LoginLink } from '../../components/LoginLink/LoginLink';
+import styles from './login-screen.css';
+
 export class LoginScreen extends HTMLElement {
 	constructor() {
 		super();
