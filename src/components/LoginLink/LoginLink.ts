@@ -24,3 +24,4 @@ export class LoginLink extends HTMLElement {
 	}
 }
 
+customElements.define('login-link', LoginLink);
