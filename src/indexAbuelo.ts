@@ -1,7 +1,5 @@
-// determina qué pantalla debe pintarS
-
+// determina qué pantalla debe pintar
 import './screens/landing/landing';
-
 class AppContainer extends HTMLElement {
 	constructor() {
 		super();

@@ -1,4 +1,3 @@
-import { LoginButton } from '../../components/loginButton/loginButton';
 import styles from './login-screen.css';
 
 export class LoginScreen extends HTMLElement {

@@ -4,7 +4,7 @@ import { reducer } from './reducer';
 export let appState = {
 	backgroundColor: 'black',
 	username: 'juanes',
-	od: 12345,
+	id: 12345,
 };
 
 let observers: any[] = []; //arreglo de observadores

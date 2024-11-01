@@ -1,13 +1,13 @@
-//crear reducer para cambiar color de fondo
+import { Actions } from '../types/store';
 
 export const reducer = (currentAction: any, currentState: any) => {
 	const { action, payload } = currentAction;
 
 	switch (action) {
-		case 'CHANGEBACKGROUND': //accion
+		case Actions.NAVIGATE: //acción
 			return {
 				...currentState, //hace una copia
-				backgroundcolor: payload, //payload es el nuevo valor, lo que tiene que hacer con la acción
+				screen: payload, //payload es el nuevo valor, lo que debe hacer con la acción
 			};
 
 		default:

@@ -1,4 +1,5 @@
 import { addObserver, appState, dispatch } from '../../store/store';
+import { changeBackground } from '../../store/actions'; //importo la acción
 
 class landing extends HTMLElement {
 	constructor() {
@@ -13,10 +14,15 @@ class landing extends HTMLElement {
 	}
 
 	render() {
-		if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+		if (this.shadowRoot) this.shadowRoot.innerHTML = `<h1>Hola</h1>`;
+		console.log(appState); //imprimir lo que hay en el estado global
 		//crear un boton:
 		const btn = this.ownerDocument.createElement('button');
 		btn.innerHTML = 'cambiar background';
+		btn.addEventListener('click', () => {
+			dispatch(changeBackground('red'));
+		});
+		this.shadowRoot?.appendChild(btn);
 	}
 }
 

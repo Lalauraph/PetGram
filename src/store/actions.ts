@@ -1,8 +1,9 @@
-//creo las acciones
+import { Actions } from '../types/store';
+import { Screens } from '../types/store';
 
-export const changeBackground = (payload: any) => {
+export const navigate = (screen: Screens) => {
 	return {
-		action: 'CHANGEBACKGROUND',
-		payload,
+		action: Actions.NAVIGATE,
+		payload: screen,
 	};
 };
