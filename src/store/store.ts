@@ -1,4 +1,5 @@
 import { reducer } from './reducer';
+import { Observer } from '../types/types';
 
 // 1. Crear el estado global appState: es un objeto con propiedades, estado actual
 export let appState = {

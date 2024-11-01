@@ -1,4 +1,4 @@
-import { Actions } from '../types/store';
+import { Actions } from '../types/types';
 
 export const reducer = (currentAction: any, currentState: any) => {
 	const { action, payload } = currentAction;

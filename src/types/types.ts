@@ -8,10 +8,12 @@ export type AppState = {
 export type Observer = { render: () => void } & HTMLElement;
 
 export enum Actions {
+	'CHANGEBACKGROUND' = 'CHANGEBACKGROUND',
 	'NAVIGATE' = 'NAVIGATE',
 }
 
 export enum Screens {
 	'LOGIN' = 'LOGIN',
-	'FEED' = 'FEED',
+	'DASHBOARD' = 'DASHBOARD',
+	'REGISTER' = 'REGISTER',
 }

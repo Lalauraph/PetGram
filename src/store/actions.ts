@@ -1,5 +1,5 @@
-import { Actions } from '../types/store';
-import { Screens } from '../types/store';
+import { Actions } from '../types/types';
+import { Screens } from '../types/types';
 
 export const navigate = (screen: Screens) => {
 	return {
