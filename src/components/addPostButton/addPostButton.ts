@@ -1,4 +1,4 @@
-import styles from './add-post-button.css';
+import styles from './addPostButton.css';
 
 export class addPostButton extends HTMLElement {
 	constructor() {

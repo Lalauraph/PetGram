@@ -1,4 +1,4 @@
-import styles from './login-button.css';
+import styles from './loginButton.css';
 
 export class LoginButton extends HTMLElement {
 	constructor() {
