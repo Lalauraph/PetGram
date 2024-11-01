@@ -1,3 +1,5 @@
+// determina qué pantalla debe pintarS
+
 import './screens/landing/landing';
 
 class AppContainer extends HTMLElement {
