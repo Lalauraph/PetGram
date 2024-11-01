@@ -14,6 +14,6 @@ export enum Actions {
 
 export enum Screens {
 	'LOGIN' = 'LOGIN',
-	'DASHBOARD' = 'DASHBOARD',
-	'REGISTER' = 'REGISTER',
+	'LANDING' = 'LANDING',
+	'FEED' = 'FEED',
 }
