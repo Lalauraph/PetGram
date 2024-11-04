@@ -27,6 +27,7 @@ export class breedCard extends HTMLElement {
 		this.render();
 	}
 
+	//PREGUNTA: Cómo hago para que solo aparezca la raza (breed) del usuario que está loggeado
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
