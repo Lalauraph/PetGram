@@ -3,9 +3,6 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
-import '../components/UsernameField'; 
-import '../components/PasswordField'; 
-import '../components/LoginButton';
 
 
 // Configuración de Firebase (reemplaza con tus credenciales)
