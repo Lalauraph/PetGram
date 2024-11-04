@@ -1,2 +1,4 @@
-export { profileBanner, Attribute4 } from './4.profile-banner/profile-banner';
-export { postCard, Attribute7 } from './7.post-card/post-card';
+export { profileBanner, Attribute4 } from './profileBanner/profileBanner';
+export { postCard, Attribute7 } from './postCard/postCard';
+export { welcomeMessage, Attribute13 } from './welcomeMessage/welcomeMessage';
+export { addPostButton } from './addPostButton/addPostButton';
