@@ -1,12 +1,12 @@
 import { reducer } from './reducer';
 import { AppState, Observer } from '../types/types';
 
-// 1. Crear el estado global appState: es un objeto con propiedades, estado actual
+// 1. Crear el estado global appState: es un objeto con propiedades, estado actual: inicia en pantalla de landing
 export let appState: AppState = {
-	screen: 'LOGIN',
+	screen: 'LANDING',
 };
 
-let observers: any[] = []; //arreglo de observadores
+let observers: Observer[] = []; //arreglo de observadores
 
 // 2. Crear dispatch: método para lanzar las acciones
 // Se clona el estado global, luego con el reducer se da cuenta qué acción estoy lanzando
