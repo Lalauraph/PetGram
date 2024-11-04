@@ -1,19 +1,27 @@
 export type AppState = {
 	screen: string;
-	backgroundColor: string;
-	username: string;
-	id: number;
 };
 
 export type Observer = { render: () => void } & HTMLElement;
 
+//crear acción de navegar
 export enum Actions {
-	'CHANGEBACKGROUND' = 'CHANGEBACKGROUND',
 	'NAVIGATE' = 'NAVIGATE',
 }
 
+//crear tipados de las pantallas
 export enum Screens {
-	'LOGIN' = 'LOGIN',
-	'LANDING' = 'LANDING',
+	'ADDPOST' = 'ADDPOST',
+	'CREATEACCOUNT' = 'CREATEACCOUNT',
+	'EDITPROFILE' = 'EDITPROFILE',
+	'EDITPROFILEPICTURE' = 'EDITPROFILEPICTURE',
 	'FEED' = 'FEED',
+	'LANDING' = 'LANDING',
+	'LOGIN' = 'LOGIN',
+	'MYPOSTVIEW' = 'MYPOSTVIEW',
+	'MYPROFILE' = 'MYPROFILE',
+	'PROFILESETUP' = 'PROFILESETUP',
+	'REGISTER' = 'REGISTER',
+	'SINGLEPOST' = 'SINGLEPOST',
+	'USERPROFILE' = 'USERPROFILE',
 }
