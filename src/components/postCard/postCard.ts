@@ -1,4 +1,4 @@
-import styles from './post-card.css';
+import styles from './postcard.css';
 
 export enum Attribute7 {
 	'profilePicture' = 'profilePicture',

@@ -1,4 +1,4 @@
-import styles from './profile-banner.css';
+import styles from './profileBanner.css';
 
 export enum Attribute4 {
 	'profilePic' = 'profilePic',
