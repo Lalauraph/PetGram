@@ -17,21 +17,3 @@
     text-align: center;
 }
 
-.title {
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.link {
-    color: #ffffff;
-    cursor: pointer;
-    margin-top: 1rem;
-    display: block;
-    font-size: 0.9rem;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
