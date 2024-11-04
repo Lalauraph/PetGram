@@ -18,12 +18,16 @@ class AppContainer extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = ""; // Limpiar el contenido anterior
     }
-    console.log(appState);
 
     switch (appState.screen) {
       case "LOGIN":
         const login = document.createElement("login-screen");
         this.shadowRoot?.appendChild(login);
+        break;
+
+      case "REGISTER":
+        const register = document.createElement("register-screen");
+        this.shadowRoot?.appendChild(register);
         break;
 
       case "FEED":
@@ -42,4 +46,4 @@ class AppContainer extends HTMLElement {
   }
 }
 
-customElements.define('app-container', AppContainer);
+customElements.define("app-container", AppContainer);

@@ -6,19 +6,24 @@ export let appState = {
 	backgroundColor: 'black',
 	username: 'juanes',
 	id: 12345,
+	screen: 'LOGIN',
 };
 
-let observers: any[] = []; //arreglo de observadores
+let observers: any[] = []; // arreglo de observadores
 
-//2. crear dispatch: metodo para lanzar las acciones
-//se clona el estado global, luego con el reducer se da cuenta qué acción estoy lanzando
+// 2. Crear dispatch: método para lanzar las acciones
+// Se clona el estado global, luego con el reducer se da cuenta qué acción estoy lanzando
 export const dispatch = (action: any) => {
-	const clone = JSON.parse(JSON.stringify(appState)); // esta linea vuelve un string el appState y luego un json, le crea una copia
+	const clone = JSON.parse(JSON.stringify(appState)); // crea una copia del estado actual
 	appState = reducer(action, clone);
-	observers.forEach((o) => o.render); //donde haya un observador se ejecuta el render, la pantalla se debe volver a renderizar
+	observers.forEach((o) => {
+		if (typeof o.render === 'function') {
+			o.render(); // llama al método render de cada observador
+		}
+	});
 };
 
-//3. agregar observadores para los subscritos (las screens) le notifica a observadores que cambió el store
+// 3. Agregar observadores para los subscritos (las screens), notificando que el store ha cambiado
 export const addObserver = (ref: any) => {
 	observers = [...observers, ref];
 };

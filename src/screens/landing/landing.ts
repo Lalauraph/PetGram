@@ -1,5 +1,5 @@
 import { addObserver, appState, dispatch } from '../../store/store';
-import { changeBackground } from '../../store/actions'; //importo la acción
+// import { changeBackground } from '../../store/actions'; //importo la acción
 
 class landing extends HTMLElement {
 	constructor() {
@@ -20,7 +20,7 @@ class landing extends HTMLElement {
 		const btn = this.ownerDocument.createElement('button');
 		btn.innerHTML = 'cambiar background';
 		btn.addEventListener('click', () => {
-			dispatch(changeBackground('red'));
+			// dispatch(changeBackground('red'));
 		});
 		this.shadowRoot?.appendChild(btn);
 	}
