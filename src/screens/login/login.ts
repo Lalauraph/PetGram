@@ -3,6 +3,9 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
+import '../components/UsernameField'; // Importa el componente de campo de usuario
+import '../components/PasswordField'; // Importa el componente de campo de contraseña
+import '../components/LoginButton'; // Importa el componente de botón de inicio de sesión
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
@@ -30,9 +33,9 @@ class LoginScreen extends HTMLElement {
 		this.render();
 	}
 
-	async handleLogin(event: any) {
+	async handleLogin(event: Event) {
 		event.preventDefault();
-		const emailElement = this.shadowRoot?.querySelector('#email') as HTMLInputElement;
+		const emailElement = this.shadowRoot?.querySelector('#username') as HTMLInputElement;
 		const passwordElement = this.shadowRoot?.querySelector('#password') as HTMLInputElement;
 		const email = emailElement.value;
 		const password = passwordElement.value;
@@ -55,15 +58,16 @@ class LoginScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+				<link rel="stylesheet" href="./login.css">
 				<div class="login-container">
 					<div class="login-modal">
-						<h1 class="login-title">Login</h1>
+						<h1 class="title">Welcome Back!</h1>
 						<form id="loginForm">
-							<input type="email" id="email" placeholder="Email" required>
-							<input type="password" id="password" placeholder="Password" required>
-							<button type="submit">Login</button>
+							<username-field></username-field>
+							<password-field></password-field>
+							<login-button></login-button>
 						</form>
-						<button class="register-button" id="registerButton">Register</button>
+						<span class="link" id="registerButton">Don't have an account yet? <br> Create one!</span>
 					</div>
 				</div>
 			`;
