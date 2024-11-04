@@ -4,7 +4,6 @@ import './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
 
-
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
 	apiKey: "AIzaSyBkaBsPm_SGn_Ax34BUefRZ0Guj_Li0KLA",
@@ -33,7 +32,7 @@ class LoginScreen extends HTMLElement {
 
 	async handleLogin(event: any) {
 		event.preventDefault();
-		const emailElement = this.shadowRoot?.querySelector('#username') as HTMLInputElement;
+		const emailElement = this.shadowRoot?.querySelector('#email') as HTMLInputElement;
 		const passwordElement = this.shadowRoot?.querySelector('#password') as HTMLInputElement;
 		const email = emailElement.value;
 		const password = passwordElement.value;
@@ -53,20 +52,18 @@ class LoginScreen extends HTMLElement {
 		dispatch(navigate("REGISTER"));
 	}
 
-
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-				<link rel="stylesheet" href="./login.css">
 				<div class="login-container">
 					<div class="login-modal">
-						<h1 class="title">Welcome Back!</h1>
+						<h1 class="login-title">Login</h1>
 						<form id="loginForm">
-							<username-field></username-field>
-							<password-field></password-field>
-							<login-button></login-button>
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="password" id="password" placeholder="Password" required>
+							<button type="submit">Login</button>
 						</form>
-						<span class="link" id="registerButton">Don't have an account yet? <br> Create one!</span>
+						<button class="register-button" id="registerButton">Register</button>
 					</div>
 				</div>
 			`;
