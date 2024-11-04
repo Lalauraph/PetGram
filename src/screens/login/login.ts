@@ -26,6 +26,7 @@ class LoginScreen extends HTMLElement {
 		this.navigateToRegister = this.navigateToRegister.bind(this);
 	}
 
+
 	connectedCallback() {
 		this.render();
 	}
@@ -55,64 +56,7 @@ class LoginScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-				<style>
-					/* Estilos básicos */
-					.login-container {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						height: 100vh;
-						background-color: #f0f0f0;
-					}
-					.login-modal {
-						background-color: white;
-						padding: 2rem;
-						border-radius: 8px;
-						box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-					}
-					.login-modal h1 {
-						text-align: center;
-						margin-bottom: 1rem;
-					}
-					.login-modal input {
-						display: block;
-						width: 100%;
-						margin-bottom: 1rem;
-						padding: 0.5rem;
-						border: 1px solid #ccc;
-						border-radius: 4px;
-					}
-					.login-modal button {
-						width: 100%;
-						padding: 0.5rem;
-						margin-bottom: 0.5rem;
-						background-color: #007bff;
-						color: white;
-						border: none;
-						border-radius: 4px;
-						cursor: pointer;
-					}
-					.login-modal button:hover {
-						background-color: #0056b3;
-					}
-					.register-button {
-						background-color: #28a745;
-					}
-					.register-button:hover {
-						background-color: #218838;
-					}
-				</style>
-				<div class="login-container">
-					<div class="login-modal">
-						<h1 class="login-title">Login</h1>
-						<form id="loginForm">
-							<input type="email" id="email" placeholder="Email" required>
-							<input type="password" id="password" placeholder="Password" required>
-							<button type="submit">Login</button>
-						</form>
-						<button class="register-button" id="registerButton">Register</button>
-					</div>
-				</div>
+				
 			`;
 
 			const form = this.shadowRoot.querySelector('#loginForm');
