@@ -1,42 +1,43 @@
-import { PostCard } from "./data/dataPostCard";
-import { Profile } from "./data/dataProfile";
-import "./components/indexPadre";
-import {
-  profileBanner,
-  Attribute4,
-} from "./components/4.profile-banner/profile-banner";
-import { postCard } from "./components/indexPadre";
+import { addObserver } from "./store/store";
+import { appState } from "./store/store";
+import "./screens/indexPadre";
 
 // Crear el App container
 class AppContainer extends HTMLElement {
-  postCard: postCard[] = [];
-  profileBanner: profileBanner[] = [];
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-
-    // Crear el componente profile-banner
-
-    Profile.forEach((user) => {
-      const profileBanner = document.createElement(
-        "profile-banner"
-      ) as profileBanner;
-      profileBanner.profilePic = user.profilePic;
-      profileBanner.name = user.name;
-      this.profileBanner.push(profileBanner);
-    });
+    addObserver(this);
   }
 
   connectedCallback() {
-    this.renderizar();
+    this.render();
   }
 
-  renderizar() {
+  render() {
     if (this.shadowRoot) {
-      this.shadowRoot.innerHTML = `<h1>TEST</h1>`;
-      this.profileBanner.forEach((profileBanner) => {
-        this.shadowRoot?.appendChild(profileBanner);
-      });
+      this.shadowRoot.innerHTML = ""; // Limpiar el contenido anterior
+    }
+    console.log(appState);
+
+    switch (appState.screen) {
+      case "LOGIN":
+        const login = document.createElement("login-screen");
+        this.shadowRoot?.appendChild(login);
+        break;
+
+      case "FEED":
+        const feed = document.createElement("feed-container");
+        this.shadowRoot?.appendChild(feed);
+        break;
+
+      case "LANDING":
+        const landing = document.createElement("app-landing");
+        this.shadowRoot?.appendChild(landing);
+        break;
+
+      default:
+        break;
     }
   }
 }
