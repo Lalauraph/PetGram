@@ -60,7 +60,18 @@ class LoginScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-				
+				<link rel="stylesheet" href="./login.css">
+				<div class="login-container">
+					<div class="login-modal">
+						<h1 class="title">Welcome Back!</h1>
+						<form id="loginForm">
+							<username-field></username-field>
+							<password-field></password-field>
+							<login-button></login-button>
+						</form>
+						<span class="link" id="registerButton">Don't have an account yet? <br> Create one!</span>
+					</div>
+				</div>
 			`;
 
 			const form = this.shadowRoot.querySelector('#loginForm');
