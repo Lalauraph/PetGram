@@ -10,3 +10,11 @@
 	color: #ffffff;
 }
 
+.input-field {
+	width: 100%;
+	padding: 0.75rem;
+	border: none;
+	border-radius: 20px;
+	background-color: #ffffff;
+	font-size: 1rem;
+}
