@@ -1,5 +1,5 @@
 import styles from './usernameField.css';
-
+//no usa data
 export class UsernameField extends HTMLElement {
 	constructor() {
 		super();

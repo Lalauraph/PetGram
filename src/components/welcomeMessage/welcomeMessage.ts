@@ -1,6 +1,6 @@
 import styles from './welcomeMessage.css';
-
-export enum Attribute13 {
+//usa 1 atributo de datapostcard
+export enum AttributeMessage {
 	'name' = 'name',
 }
 
@@ -13,7 +13,7 @@ export class welcomeMessage extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		const attrs: Record<Attribute13, null> = {
+		const attrs: Record<AttributeMessage, null> = {
 			name: null,
 		};
 		return Object.keys(attrs);
@@ -25,7 +25,7 @@ export class welcomeMessage extends HTMLElement {
 
 	attributeChangedCallback(propName: string, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
-			case Attribute13.name:
+			case AttributeMessage.name:
 				this.name = newValue;
 				break;
 			default:
@@ -45,7 +45,7 @@ export class welcomeMessage extends HTMLElement {
 				<div class="messageuser">
 				  <h2>Welcome back <span>${this.name}</span>.</h2>
 				</div>
-				  <p>Here’s what your PetGram friends have been doing...</p>
+				  <p>Here is what your PetGram friends have been doing...</p>
 				</div>
 			  </section>
 			`;

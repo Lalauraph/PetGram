@@ -1,5 +1,5 @@
 import styles from './createAccountButton.css';
-
+//no usa data
 export class createAccountButton extends HTMLElement {
 	constructor() {
 		super();

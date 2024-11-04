@@ -1,5 +1,5 @@
 import styles from './introBanner.css';
-
+//no usa data
 export class introBanner extends HTMLElement {
 	constructor() {
 		super();

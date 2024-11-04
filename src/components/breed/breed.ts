@@ -1,5 +1,6 @@
 import styles from './breed.css';
-
+//usa breed de la dataPostCard
+//atributo: AttributeBreed
 export enum AttributeBreed {
 	'breed' = 'breed',
 }

@@ -1,5 +1,5 @@
 import styles from './postPicture.css';
-
+//usa 1 atributo de dataPosCard
 export enum AttributePicture {
 	'postPicture' = 'postPicture',
 }

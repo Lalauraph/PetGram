@@ -1,5 +1,5 @@
 import styles from './userDescription.css';
-
+//usa todo de la dataprofile
 export enum AttributeUser {
 	'profilePic' = 'profilePic',
 	'name' = 'name',

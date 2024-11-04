@@ -5,7 +5,7 @@ export class addPostButton extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
-
+	//no usa data
 	connectedCallback() {
 		this.render();
 	}

@@ -1,3 +1,5 @@
+import styles from './saveButton.css';
+//no usa data
 export class saveButton extends HTMLElement {
 	constructor() {
 		super();
@@ -11,6 +13,9 @@ export class saveButton extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+			 <style>
+          ${styles}
+        </style>
               <button type="submit">Save</button>
           `;
 		}

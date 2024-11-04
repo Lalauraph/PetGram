@@ -1,5 +1,5 @@
 import styles from './passwordField.css';
-
+//no usa data
 export class PasswordField extends HTMLElement {
 	constructor() {
 		super();

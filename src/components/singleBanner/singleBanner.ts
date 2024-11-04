@@ -1,5 +1,5 @@
 import styles from './singleBanner.css';
-
+//usa data de data Profile
 export enum AttributeBanner {
 	'profilePic' = 'profilePic',
 	'name' = 'name',

@@ -1,6 +1,6 @@
 import styles from './postcard.css';
-
-export enum Attribute7 {
+//usa todo de la datapostcard
+export enum AttributePostCard {
 	'profilePicture' = 'profilePicture',
 	'postPicture' = 'postPicture',
 	'name' = 'name',
@@ -24,7 +24,7 @@ export class postCard extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		const attrs: Record<Attribute7, null> = {
+		const attrs: Record<AttributePostCard, null> = {
 			profilePicture: null,
 			postPicture: null,
 			name: null,
@@ -40,9 +40,9 @@ export class postCard extends HTMLElement {
 		this.addLikeButtonListener();
 	}
 
-	attributeChangedCallback(propName: Attribute7, oldValue: string | undefined, newValue: string | undefined) {
+	attributeChangedCallback(propName: AttributePostCard, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
-			case Attribute7.likes:
+			case AttributePostCard.likes:
 				this.likes = newValue ? Number(newValue) : 0;
 				break;
 			default:
