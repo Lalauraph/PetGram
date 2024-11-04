@@ -3,10 +3,6 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
-import '../components/usernameField'; 
-import '../components/passwordField'; 
-import '../components/loginButton';
-
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
@@ -29,7 +25,6 @@ class LoginScreen extends HTMLElement {
 		this.handleLogin = this.handleLogin.bind(this);
 		this.navigateToRegister = this.navigateToRegister.bind(this);
 	}
-
 
 	connectedCallback() {
 		this.render();
@@ -60,16 +55,15 @@ class LoginScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-				<link rel="stylesheet" href="./login.css">
 				<div class="login-container">
 					<div class="login-modal">
-						<h1 class="title">Welcome Back!</h1>
+						<h1 class="login-title">Login</h1>
 						<form id="loginForm">
-							<username-field></username-field>
-							<password-field></password-field>
-							<login-button></login-button>
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="password" id="password" placeholder="Password" required>
+							<button type="submit">Login</button>
 						</form>
-						<span class="link" id="registerButton">Don't have an account yet? <br> Create one!</span>
+						<button class="register-button" id="registerButton">Register</button>
 					</div>
 				</div>
 			`;
