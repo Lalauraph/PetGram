@@ -8,7 +8,7 @@ export const reducer = (currentAction: any, currentState: any) => {
 		case Actions.NAVIGATE:
 			return {
 				...currentState,
-				backgroundColor: payload, //de lo que estaba en el estado actual editar el background color
+				screen: payload, //de lo que estaba en el estado actual editar el background color
 			};
 
 		default:
