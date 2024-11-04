@@ -1,6 +1,5 @@
 import { addObserver } from './store/store';
 import { appState } from './store/store';
-import './screens/indexPadre';
 import './screens/login/login';
 
 // Crear el App container

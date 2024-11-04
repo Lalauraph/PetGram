@@ -1,19 +1,14 @@
 import { Actions } from '../types/types';
 
+//se crea un reducer para lo que le dije en el estado global: recibe dos cosas: accion y clon
 export const reducer = (currentAction: any, currentState: any) => {
-	const { action, payload } = currentAction;
+	const { action, payload } = currentAction; //payload es el nuevo valor
 
 	switch (action) {
-		case Actions.CHANGEBACKGROUND:
+		case Actions.NAVIGATE:
 			return {
 				...currentState,
-				backgroundColor: payload,
-			};
-
-		case Actions.NAVIGATE: //acción
-			return {
-				...currentState, //hace una copia
-				screen: payload, //payload es el nuevo valor, lo que debe hacer con la acción
+				backgroundColor: payload, //de lo que estaba en el estado actual editar el background color
 			};
 
 		default:

@@ -5,6 +5,7 @@ import { postCard } from '../../components/indexPadre';
 import { welcomeMessage } from '../../components/indexPadre';
 import { addPostButton } from '../../components/indexPadre';
 import '../../components/indexPadre';
+import { addObserver, appState, dispatch } from '../store/store.ts';
 
 // Crear el App container
 class AppContainer extends HTMLElement {
@@ -15,6 +16,7 @@ class AppContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this); //agrego el observador
 
 		// Crear los componentes
 
