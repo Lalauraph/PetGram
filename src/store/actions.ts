@@ -1,13 +1,8 @@
-export const changeScreen = (payload: any) => {
+import { Actions, Screens } from '../types/types';
+
+export const navigate = (screen: Screens) => {
 	return {
-		action: 'CHANGESCREEN',
-		payload,
+		action: Actions.NAVIGATE,
+		payload: screen,
 	};
 };
-
-// export const navigate = (screen: string) => {
-// 	return {
-// 		action: Actions.NAVIGATE,
-// 		payload: screen,
-// 	};
-// };
