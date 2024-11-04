@@ -5,10 +5,9 @@ import { postCard } from '../../components/indexPadre';
 import { welcomeMessage } from '../../components/indexPadre';
 import { addPostButton } from '../../components/indexPadre';
 import '../../components/indexPadre';
-import { addObserver, appState, dispatch } from '../store/store.ts';
 
 // Crear el App container
-class AppContainer extends HTMLElement {
+class Feed extends HTMLElement {
 	postCard: postCard[] = [];
 	profileBanner: profileBanner[] = [];
 	welcomeMessage: welcomeMessage[] = [];
@@ -16,10 +15,8 @@ class AppContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		addObserver(this); //agrego el observador
 
 		// Crear los componentes
-
 		Profile.forEach((user) => {
 			const profileBanner = document.createElement('profile-banner') as profileBanner;
 			profileBanner.profilePic = user.profilePic;
@@ -84,6 +81,4 @@ class AppContainer extends HTMLElement {
 	}
 }
 
-customElements.define('feed-container', AppContainer);
-
-export default AppContainer;
+customElements.define('app-feed', Feed);
