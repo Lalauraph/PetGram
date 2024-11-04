@@ -1,0 +1,20 @@
+export class saveButton extends HTMLElement {
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+	}
+
+	connectedCallback() {
+		this.render();
+	}
+
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+              <button type="submit">Save</button>
+          `;
+		}
+	}
+}
+
+customElements.define('save-button', saveButton);
