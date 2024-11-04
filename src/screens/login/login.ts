@@ -3,9 +3,9 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
-import '../components/usernameField'; 
-import '../components/passwordField'; 
-import '../components/loginButton';
+import '../components/UsernameField'; 
+import '../components/PasswordField'; 
+import '../components/LoginButton';
 
 
 // Configuración de Firebase (reemplaza con tus credenciales)
@@ -30,14 +30,13 @@ class LoginScreen extends HTMLElement {
 		this.navigateToRegister = this.navigateToRegister.bind(this);
 	}
 
-
 	connectedCallback() {
 		this.render();
 	}
 
 	async handleLogin(event: any) {
 		event.preventDefault();
-		const emailElement = this.shadowRoot?.querySelector('#email') as HTMLInputElement;
+		const emailElement = this.shadowRoot?.querySelector('#username') as HTMLInputElement;
 		const passwordElement = this.shadowRoot?.querySelector('#password') as HTMLInputElement;
 		const email = emailElement.value;
 		const password = passwordElement.value;
@@ -56,6 +55,7 @@ class LoginScreen extends HTMLElement {
 	navigateToRegister() {
 		dispatch(navigate("REGISTER"));
 	}
+
 
 	render() {
 		if (this.shadowRoot) {
