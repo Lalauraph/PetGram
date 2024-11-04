@@ -8,7 +8,7 @@ export const changeBackground = (payload: any) => {
 	};
 };
 
-export const navigate = (screen: Screens) => {
+export const navigate = (screen: string) => {
 	return {
 		action: Actions.NAVIGATE,
 		payload: screen,

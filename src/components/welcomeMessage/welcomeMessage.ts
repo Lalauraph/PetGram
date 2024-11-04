@@ -1,4 +1,4 @@
-import styles from './welcome-message.css';
+import styles from './welcomeMessage.css';
 
 export enum Attribute13 {
 	'name' = 'name',

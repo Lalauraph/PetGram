@@ -1,10 +1,9 @@
-// determina qué pantalla debe pintar
-import './screens/landing';
-import './screens/login';
-import './screens/feed';
 import { addObserver } from './store/store';
 import { appState } from './store/store';
+import './screens/indexPadre';
+import './screens/login/login';
 
+// Crear el App container
 class AppContainer extends HTMLElement {
 	constructor() {
 		super();
@@ -17,22 +16,28 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		if (this.shadowRoot) this.shadowRoot.innerHTML = '';
-		console.log(appState);
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = ''; // Limpiar el contenido anterior
+		}
 
 		switch (appState.screen) {
 			case 'LOGIN':
-				const login = this.ownerDocument.createElement('app-login');
+				const login = document.createElement('login-screen');
 				this.shadowRoot?.appendChild(login);
 				break;
 
+			case 'REGISTER':
+				const register = document.createElement('register-screen');
+				this.shadowRoot?.appendChild(register);
+				break;
+
 			case 'FEED':
-				const feed = this.ownerDocument.createElement('app-feed');
+				const feed = document.createElement('feed-container');
 				this.shadowRoot?.appendChild(feed);
 				break;
 
 			case 'LANDING':
-				const landing = this.ownerDocument.createElement('app-landing');
+				const landing = document.createElement('app-landing');
 				this.shadowRoot?.appendChild(landing);
 				break;
 

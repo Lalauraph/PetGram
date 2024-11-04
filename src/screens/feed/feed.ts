@@ -1,10 +1,10 @@
 import { PostCard } from '../../data/dataPostCard';
 import { Profile } from '../../data/dataProfile';
-import './components/indexPadre';
 import { profileBanner } from '../../components/indexPadre';
 import { postCard } from '../../components/indexPadre';
 import { welcomeMessage } from '../../components/indexPadre';
 import { addPostButton } from '../../components/indexPadre';
+import '../../components/indexPadre';
 
 // Crear el App container
 class AppContainer extends HTMLElement {
@@ -48,6 +48,7 @@ class AppContainer extends HTMLElement {
 		this.renderizar();
 	}
 	renderizar() {
+		console.log('renderizando');
 		if (this.shadowRoot) {
 			this.profileBanner.forEach((profileBanner) => {
 				this.shadowRoot?.appendChild(profileBanner);
@@ -81,4 +82,6 @@ class AppContainer extends HTMLElement {
 	}
 }
 
-customElements.define('app-container', AppContainer);
+customElements.define('feed-container', AppContainer);
+
+export default AppContainer;
