@@ -1,79 +1,79 @@
 /* Contenedor general del login */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #F5DEB3; /* Fondo beige claro */
-    position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #f5deb3; /* Fondo beige claro */
+	position: relative;
 }
 
 /* Modal de inicio de sesión */
 .login-modal {
-    background-color: #42a5f5; /* Azul claro para el cuadro */
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    text-align: center;
+	background-color: #42a5f5; /* Azul claro para el cuadro */
+	padding: 2rem;
+	border-radius: 20px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	width: 400px;
+	text-align: center;
 }
 
 /* Título de bienvenida */
 .title {
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+	font-size: 2rem;
+	color: #ffffff;
+	margin-bottom: 1.5rem;
+	font-weight: bold;
 }
 
 /* Campo de entrada (input-field) */
 .input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1rem;
+	width: 100%;
 }
 
 .input-field {
-    width: 80%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 20px;
-    background-color: #ffffff;
-    font-size: 1rem;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+	width: 80%;
+	padding: 0.75rem;
+	border: none;
+	border-radius: 20px;
+	background-color: #ffffff;
+	font-size: 1rem;
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+	text-align: center;
 }
 
 /* Botón de inicio de sesión */
 .login-button {
-    width: 80%;
-    padding: 0.75rem;
-    background-color: #FFA000; /* Naranja */
-    color: #ffffff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
+	width: 80%;
+	padding: 0.75rem;
+	background-color: #ffa000; /* Naranja */
+	color: #ffffff;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-top: 1rem;
+	transition: background-color 0.3s;
 }
 
 .login-button:hover {
-    background-color: #FF8C00; /* Un tono más oscuro de naranja */
+	background-color: #ff8c00; /* Un tono más oscuro de naranja */
 }
 
 /* Enlace para registro */
 .link {
-    color: #ffffff;
-    cursor: pointer;
-    margin-top: 1rem;
-    display: block;
-    font-size: 0.9rem;
+	color: #ffffff;
+	cursor: pointer;
+	margin-top: 1rem;
+	display: block;
+	font-size: 0.9rem;
 }
 
 .link:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }

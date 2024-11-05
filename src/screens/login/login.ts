@@ -1,8 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import './login.css';
+import styles from './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
+import { Screens } from '.../types/types';
+
 import '../components/UsernameField'; // Importa el componente de campo de usuario
 import '../components/PasswordField'; // Importa el componente de campo de contraseña
 import '../components/LoginButton'; // Importa el componente de botón de inicio de sesión
@@ -58,6 +60,9 @@ class LoginScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
+			 <style>
+				${styles}
+			  </style>
 				<link rel="stylesheet" href="./login.css">
 				<div class="login-container">
 					<div class="login-modal">
