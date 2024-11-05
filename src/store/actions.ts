@@ -1,8 +1,8 @@
-import { Actions, Screens } from '../types/types';
+import { NavigateAction, NavigationActions, Screens } from '../types/types';
 
-export const navigate = (screen: Screens) => {
+export const navigate = (screen: Screens): NavigateAction => {
 	return {
-		action: Actions.NAVIGATE,
+		action: NavigationActions.NAVIGATE,
 		payload: screen,
 	};
 };
