@@ -1,6 +1,21 @@
+//importar todas las pantallas
+import './screens/addPost';
+import './screens/createAccount';
+import './screens/editProfile';
+import './screens/editProfilePicture';
+import './screens/feed';
+import './screens/landing';
+import './screens/login';
+import './screens/myPostView';
+import './screens/myProfile';
+import './screens/profileSetup';
+import './screens/register';
+import './screens/singlePost';
+import './screens/userProfile';
+
+//importar lo de store
 import { addObserver } from './store/store';
 import { appState } from './store/store';
-import './screens/login/login';
 
 // Crear el App container
 class AppContainer extends HTMLElement {
