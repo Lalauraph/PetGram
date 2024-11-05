@@ -29,20 +29,40 @@ class AppContainer extends HTMLElement {
 		this.render();
 	}
 
+	//crear las pantallas
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ''; // Limpiar el contenido anterior
+			console.log(appState);
 		}
+		console.log(appState);
 
 		switch (appState.screen) {
-			case 'LOGIN':
-				const login = document.createElement('login-screen');
-				this.shadowRoot?.appendChild(login);
+			//donde inicia la página: en la pantalla landing
+
+			case 'LANDING':
+				const landing = document.createElement('landing-screen');
+				this.shadowRoot?.appendChild(landing);
 				break;
 
-			case 'REGISTER':
-				const register = document.createElement('register-screen');
-				this.shadowRoot?.appendChild(register);
+			case 'ADDPOST':
+				const addPost = document.createElement('addPost-screen');
+				this.shadowRoot?.appendChild(addPost);
+				break;
+
+			case 'CREATEACCOUNT':
+				const createAccount = document.createElement('createAccpunt-screen');
+				this.shadowRoot?.appendChild(createAccount);
+				break;
+
+			case 'EDITPROFILE':
+				const editProfile = document.createElement('editProfile-screen');
+				this.shadowRoot?.appendChild(editProfile);
+				break;
+
+			case 'EDITPROFILEPICTURE':
+				const editProfilePicture = document.createElement('editProfilePicture-screen');
+				this.shadowRoot?.appendChild(editProfilePicture);
 				break;
 
 			case 'FEED':
@@ -50,9 +70,39 @@ class AppContainer extends HTMLElement {
 				this.shadowRoot?.appendChild(feed);
 				break;
 
-			case 'LANDING':
-				const landing = document.createElement('app-landing');
-				this.shadowRoot?.appendChild(landing);
+			case 'LOGIN':
+				const login = document.createElement('login-screen');
+				this.shadowRoot?.appendChild(login);
+				break;
+
+			case 'MYPOSTVIEW':
+				const myPostView = document.createElement('myPostView-screen');
+				this.shadowRoot?.appendChild(myPostView);
+				break;
+
+			case 'MYPROFILE':
+				const myProfile = document.createElement('myProfile-screen');
+				this.shadowRoot?.appendChild(myProfile);
+				break;
+
+			case 'PROFILESETUP':
+				const profileSetup = document.createElement('profileSetup-screen');
+				this.shadowRoot?.appendChild(profileSetup);
+				break;
+
+			case 'REGISTER':
+				const register = document.createElement('register-screen');
+				this.shadowRoot?.appendChild(register);
+				break;
+
+			case 'SINGLEPOST':
+				const singlePost = document.createElement('singlePost-screen');
+				this.shadowRoot?.appendChild(singlePost);
+				break;
+
+			case 'USERPROFILE':
+				const userProfile = document.createElement('userProfile-screen');
+				this.shadowRoot?.appendChild(userProfile);
 				break;
 
 			default:

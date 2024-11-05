@@ -1,3 +1,5 @@
+//ESTO ES EL EJEMPLO QUE HIZO EL PROFE EN CLASE
+
 import { addObserver, appState, dispatch } from '../../store/store';
 // import { changeBackground } from '../../store/actions'; //importo la acción
 
@@ -26,6 +28,6 @@ class landing extends HTMLElement {
 	}
 }
 
-customElements.define('app-landing', landing);
+customElements.define('landing-screen', landing);
 
 export default landing;
