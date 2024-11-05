@@ -4,7 +4,6 @@ import styles from './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
-
 import '../components/UsernameField'; // Importa el componente de campo de usuario
 import '../components/PasswordField'; // Importa el componente de campo de contraseña
 import '../components/LoginButton'; // Importa el componente de botón de inicio de sesión
@@ -45,7 +44,7 @@ class LoginScreen extends HTMLElement {
 		try {
 			const userCredential = await signInWithEmailAndPassword(auth, email, password);
 			console.log('User signed in:', userCredential.user);
-			dispatch(navigate('FEED'));
+			dispatch(navigate(Screens.FEED));
 			alert('Inicio de sesión exitoso');
 		} catch (error: any) {
 			console.error('Error during login:', error);
@@ -54,7 +53,7 @@ class LoginScreen extends HTMLElement {
 	}
 
 	navigateToRegister() {
-		dispatch(navigate('REGISTER'));
+		dispatch(navigate(Screens.REGISTER));
 	}
 
 	render() {

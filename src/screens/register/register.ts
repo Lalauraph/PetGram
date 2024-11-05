@@ -6,12 +6,12 @@ import { navigate } from '../../store/actions';
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
-	apiKey: "AIzaSyBkaBsPm_SGn_Ax34BUefRZ0Guj_Li0KLA",
-	authDomain: "petgram-1a5f9.firebaseapp.com",
-	projectId: "petgram-1a5f9",
-	storageBucket: "petgram-1a5f9.firebasestorage.app",
-	messagingSenderId: "489760332429",
-	appId: "1:489760332429:web:8ab0948a178ef92e60a0c4"
+	apiKey: 'AIzaSyBkaBsPm_SGn_Ax34BUefRZ0Guj_Li0KLA',
+	authDomain: 'petgram-1a5f9.firebaseapp.com',
+	projectId: 'petgram-1a5f9',
+	storageBucket: 'petgram-1a5f9.firebasestorage.app',
+	messagingSenderId: '489760332429',
+	appId: '1:489760332429:web:8ab0948a178ef92e60a0c4',
 };
 
 // Inicializar Firebase
@@ -37,7 +37,7 @@ class RegisterScreen extends HTMLElement {
 
 		try {
 			const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-			dispatch(navigate("FEED"));
+			dispatch(navigate('FEED'));
 			alert('Registro exitoso');
 		} catch (error: any) {
 			console.error('Error during registration:', error);
@@ -46,7 +46,7 @@ class RegisterScreen extends HTMLElement {
 	}
 
 	navigateToLogin() {
-		dispatch(navigate("LOGIN"));
+		dispatch(navigate('LOGIN'));
 	}
 
 	render() {
@@ -103,11 +103,11 @@ class RegisterScreen extends HTMLElement {
 					<div class="register-modal">
 						<h1 class="register-title">Register</h1>
 						<form id="registerForm">
-							<input type="email" id="email" placeholder="Email" required>
+							<input type="email" id="email" placeholder="correo" required>
 							<input type="password" id="password" placeholder="Password" required>
 							<button type="submit">Register</button>
 						</form>
-						<button class="login-button" id="loginButton">Go to Login</button>
+						<button class="login-button" id="loginButton">Go to caracas</button>
 					</div>
 				</div>
 			`;
