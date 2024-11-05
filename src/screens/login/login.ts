@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import styles from './login.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
-import { Screens } from '.../types/types';
+import { Screens } from '../../types/types';
 
 import '../components/UsernameField'; // Importa el componente de campo de usuario
 import '../components/PasswordField'; // Importa el componente de campo de contraseña
