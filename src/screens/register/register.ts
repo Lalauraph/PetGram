@@ -3,6 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import './register.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
+import { Screens } from '../../types/types';
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
@@ -37,7 +38,7 @@ class RegisterScreen extends HTMLElement {
 
 		try {
 			const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-			dispatch(navigate('FEED'));
+			dispatch(navigate(Screens.FEED));
 			alert('Registro exitoso');
 		} catch (error: any) {
 			console.error('Error during registration:', error);
@@ -46,7 +47,7 @@ class RegisterScreen extends HTMLElement {
 	}
 
 	navigateToLogin() {
-		dispatch(navigate('LOGIN'));
+		dispatch(navigate(Screens.LOGIN));
 	}
 
 	render() {
