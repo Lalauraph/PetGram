@@ -82,3 +82,5 @@ class Feed extends HTMLElement {
 }
 
 customElements.define('app-feed', Feed);
+
+export default Feed;
