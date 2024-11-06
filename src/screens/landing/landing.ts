@@ -1,21 +1,23 @@
 //importar los componentes a usar
-import { introBanner } from '../indexPadre/';
+import '../../components/exportComponents';
+import { introBanner } from '../../components/exportComponents';
+import { createAccountButton } from '../../components/exportComponents';
+import { LoginButton } from '../../components/exportComponents';
+
 // Crear el App container
-export class landing extends HTMLElement {
-	postCard: postCard[] = [];
-	profileBanner: profileBanner[] = [];
-	welcomeMessage: welcomeMessage[] = [];
-	addPostButton!: addPostButton;
+export class Landing extends HTMLElement {
+	introBanner: introBanner[] = [];
+	createAccountButton: createAccountButton[] = [];
+	LoginButton: LoginButton[] = [];
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 
 		// Crear los componentes
-		Profile.forEach((user) => {
-			const profileBanner = document.createElement('profile-banner') as profileBanner;
-			profileBanner.profilePic = user.profilePic;
-			profileBanner.name = user.name;
-			this.profileBanner.push(profileBanner);
+
+			const introBanner = document.createElement('intro-banner') as introBanner;
+			this.introBanner.push(introBanner);
+
 		});
 
 		PostCard.forEach((card) => {

@@ -16,8 +16,9 @@ class Feed extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		// Crear los componentes
+		// Recorrer la data
 		Profile.forEach((user) => {
+			//crear el componente
 			const profileBanner = document.createElement('profile-banner') as profileBanner;
 			profileBanner.profilePic = user.profilePic;
 			profileBanner.name = user.name;
