@@ -1,10 +1,10 @@
 import { PostCard } from '../../data/dataPostCard';
 import { Profile } from '../../data/dataProfile';
-import { profileBanner } from '../../components/indexPadre';
-import { postCard } from '../../components/indexPadre';
-import { welcomeMessage } from '../../components/indexPadre';
-import { addPostButton } from '../../components/indexPadre';
-import '../../components/indexPadre';
+import { profileBanner } from '../../components/exportComponents';
+import { postCard } from '../../components/exportComponents';
+import { welcomeMessage } from '../../components/exportComponents';
+import { addPostButton } from '../../components/exportComponents';
+import '../../components/exportComponents';
 
 // Crear el App container
 class Feed extends HTMLElement {

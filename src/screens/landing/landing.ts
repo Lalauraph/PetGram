@@ -1,7 +1,7 @@
-import { introBanner } from
-
+//importar los componentes a usar
+import { introBanner } from '../indexPadre/';
 // Crear el App container
-class Feed extends HTMLElement {
+export class landing extends HTMLElement {
 	postCard: postCard[] = [];
 	profileBanner: profileBanner[] = [];
 	welcomeMessage: welcomeMessage[] = [];
@@ -75,4 +75,4 @@ class Feed extends HTMLElement {
 	}
 }
 
-customElements.define('app-feed', Feed);
+customElements.define('app-landing', landing);

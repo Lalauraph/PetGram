@@ -36,7 +36,6 @@ class AppContainer extends HTMLElement {
 			this.shadowRoot.innerHTML = ''; // Limpiar el contenido anterior
 			console.log(appState.screen);
 		}
-		console.log(appState);
 
 		switch (appState.screen) {
 			//donde inicia la página: en la pantalla landing
