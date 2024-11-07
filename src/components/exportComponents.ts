@@ -14,3 +14,4 @@ export { singleBanner, AttributeBanner } from './singleBanner/singleBanner';
 export { userDescription, AttributeUser } from './userDescription/userDescription';
 export { UsernameField } from './UsernameField/UsernameField';
 export { welcomeMessage, AttributeMessage } from './welcomeMessage/welcomeMessage';
+export { descriptionField } from './descriptionField/descriptionField';
