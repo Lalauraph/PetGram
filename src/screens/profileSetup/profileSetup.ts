@@ -2,12 +2,15 @@
 import { introBanner } from '../../components/exportComponents';
 import { createAccountButton } from '../../components/exportComponents';
 import { selectFromDevice } from '../../components/exportComponents';
+import { descriptionField } from '../../components/exportComponents';
 import styles from './landing.css';
 
 // Crear el App container
 export class Landing extends HTMLElement {
 	introbanner!: introBanner;
 	createaccountbutton!: createAccountButton;
+	selectfromdevice!: selectFromDevice;
+	descriptionfield!: descriptionField;
 
 	constructor() {
 		super();
@@ -19,7 +22,11 @@ export class Landing extends HTMLElement {
 		// Crear el componente createAccountButton
 		this.createaccountbutton = document.createElement('create-account') as createAccountButton;
 
-		// Crear el componente LoginButton
+		// Crear el componente select from device
+		this.selectfromdevice = document.createElement('selectfrom-device') as selectFromDevice;
+
+		//crear el componente descriptionfield
+		this.descriptionfield = document.createElement('description-field') as descriptionField;
 	}
 
 	connectedCallback() {
@@ -35,13 +42,12 @@ export class Landing extends HTMLElement {
 					${styles}
 					</style>
 
-					<div class="landing-container">
+					<div class="profileSetup-Container">
 						<intro-banner></intro-banner>
-						<h1 class="welcomeTitle">Welcome to</h1>
-						<img id="logo" src="https://imgur.com/eYBta3X.png">
+						<h1>Almost done!</h1>
+<selectfrom-device></selectfrom-device>
+<description-field></description-field>
 
-						<div class="button-container">
-							<create-account></create-account>
 						</div>
 					</div>
 				`;
