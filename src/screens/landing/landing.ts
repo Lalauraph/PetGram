@@ -55,3 +55,4 @@ export class Landing extends HTMLElement {
 
 //exportar pantalla como elemento personalizado
 customElements.define('landing-screen', Landing);
+export default Landing;

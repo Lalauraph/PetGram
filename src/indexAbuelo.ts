@@ -12,6 +12,7 @@ import './screens/profileSetup';
 import './screens/register';
 import './screens/singlePost';
 import './screens/userProfile';
+import { Observer } from './types/types';
 
 //importar lo de store: para la navegación
 import { addObserver } from './store/store';
@@ -19,7 +20,7 @@ import { appState } from './store/store';
 import { Screens } from './types/types';
 
 // Crear el App container
-class AppContainer extends HTMLElement {
+class AppContainer extends HTMLElement implements Observer {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -33,8 +34,8 @@ class AppContainer extends HTMLElement {
 	//crear las pantallas
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = ''; // Limpiar el contenido anterior
-			console.log(appState.screen);
+			this.shadowRoot.innerHTML = ''; // Limpiar contenido
+			console.log('Rendering screen:', appState.screen);
 		}
 
 		switch (appState.screen) {
@@ -51,7 +52,7 @@ class AppContainer extends HTMLElement {
 				break;
 
 			case Screens.CREATEACCOUNT:
-				const createAccount = document.createElement('createAccpunt-screen');
+				const createAccount = document.createElement('createAccount-screen');
 				this.shadowRoot?.appendChild(createAccount);
 				break;
 
