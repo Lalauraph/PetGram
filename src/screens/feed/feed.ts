@@ -1,8 +1,16 @@
 import { appState, addObserver, dispatch } from '../../store/store';
 import { PostCardShape, Screens } from '../../types/types';
-import { profileBanner, postCard, welcomeMessage, addPostButton, LogoutButton } from '../../components/exportComponents';
+import {
+	profileBanner,
+	postCard,
+	welcomeMessage,
+	addPostButton,
+	LogoutButton,
+} from '../../components/exportComponents';
 import { navigate } from '../../store/actions';
+import { PostCard } from '../../data/dataPostCard';
 import '../../components/exportComponents';
+import { Profile } from '../../data/dataProfile';
 
 class Feed extends HTMLElement {
 	profileBanner: profileBanner[] = [];

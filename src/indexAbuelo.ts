@@ -1,21 +1,24 @@
 import { Observer } from './types/types';
 import { addObserver, dispatch, appState } from './store/store';
 import { Screens } from './types/types';
+import { PostCard } from './data/dataPostCard';
 import './screens/exportScreens';
 
 import { addPost } from './store/actions';
 
 // Agregar publicaciones de ejemplo solo si el store está vacío
 if (appState.posts.length === 0) {
-    PostCard.forEach((post) => {
-        dispatch(addPost({
-            ...post,
-            id: Math.random().toString(36).substr(2, 9),
-        }));
-    });
-    console.log("Initial posts added to appState:", appState.posts);
+	PostCard.forEach((post) => {
+		dispatch(
+			addPost({
+				...post,
+				id: Math.random().toString(36).substr(2, 9),
+			})
+		);
+	});
+	console.log('Initial posts added to appState:', appState.posts);
 } else {
-    console.log("Posts already exist in appState:", appState.posts);
+	console.log('Posts already exist in appState:', appState.posts);
 }
 
 class AppContainer extends HTMLElement implements Observer {
@@ -103,7 +106,7 @@ class AppContainer extends HTMLElement implements Observer {
 					break;
 
 				default:
-					console.warn("Unhandled screen:", appState.screen);
+					console.warn('Unhandled screen:', appState.screen);
 					break;
 			}
 		}
