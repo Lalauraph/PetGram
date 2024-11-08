@@ -17,7 +17,25 @@ export class InputField extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
                 <style>
-                    ${require('./InputField.css').default}
+                    .input-container {
+                        margin: 10px 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    label {
+                        color: white;
+                        font-size: 0.9em;
+                        margin-bottom: 5px;
+                    }
+                    input {
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 20px;
+                        border: none;
+                        outline: none;
+                    }
+                </style>
                 <div class="input-container">
                     <label>${this.label}</label>
                     <input type="${this.type}">
@@ -28,3 +46,4 @@ export class InputField extends HTMLElement {
 }
 
 customElements.define('input-field', InputField);
+
