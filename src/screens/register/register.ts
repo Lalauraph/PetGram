@@ -128,7 +128,7 @@ class RegisterScreen extends HTMLElement {
 						font-weight: bold;
 					}
 
-					/* Estilos responsivos para pantallas más pequeñas */
+					
 					@media (max-width: 600px) {
 						.register-modal {
 							width: 90%;
