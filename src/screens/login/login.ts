@@ -76,8 +76,8 @@ class LoginScreen extends HTMLElement {
 
 			<link rel="stylesheet" href="./login.css">
 <div class="login-container">
-    <petgram-banner></petgram-banner>
     <div class="login-modal">
+    <intro-banner></intro-banner>
         <h1 class="title">Welcome Back!</h1>
         <form id="loginForm">
             <username-field id="username"></username-field>
