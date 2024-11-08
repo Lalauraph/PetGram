@@ -5,7 +5,7 @@ import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
 import { InputField, CheckboxField, SignupButton } from '../../components/exportComponents';
 
-// Configuración de Firebase (reemplaza con tus credenciales)
+// Configuración de Firebase
 const firebaseConfig = {
 	apiKey: 'AIzaSyBkaBsPm_SGn_Ax34BUefRZ0Guj_Li0KLA',
 	authDomain: 'petgram-1a5f9.firebaseapp.com',
@@ -19,6 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+//Crear clase de pantalla
 class RegisterScreen extends HTMLElement {
 	constructor() {
 		super();
@@ -31,6 +32,7 @@ class RegisterScreen extends HTMLElement {
 		this.render();
 	}
 
+	//petición
 	async handleRegister(event: Event) {
 		event.preventDefault();
 		const email = this.shadowRoot?.querySelector<HTMLInputElement>('#email')?.value || '';
@@ -65,18 +67,18 @@ class RegisterScreen extends HTMLElement {
                             <checkbox-field label="I accept the Privacy Policy and consent to the processing of my personal information in accordance with it"></checkbox-field>
                             <signup-button></signup-button>
                         </form>
-                        <button class="login-button" id="loginButton">Go to Login</button>
+                        <login-button></login-button>
                     </div>
                 </div>
 			`;
 
 			const form = this.shadowRoot.querySelector('#registerForm');
-            form?.addEventListener('submit', this.handleRegister);
+			form?.addEventListener('submit', this.handleRegister);
 
-            const loginButton = this.shadowRoot.querySelector('#loginButton');
-            loginButton?.addEventListener('click', this.navigateToLogin);
-        }
-    }
+			const loginButton = this.shadowRoot.querySelector('#loginButton');
+			loginButton?.addEventListener('click', this.navigateToLogin);
+		}
+	}
 }
 
 customElements.define('register-screen', RegisterScreen);
