@@ -152,6 +152,7 @@ class RegisterScreen extends HTMLElement {
 				</style>
 				<div class="register-container">
 					<div class="register-modal">
+					<intro-banner></intro-banner>
 						<h1 class="register-title">Join Petgram!</h1>
 						<form id="registerForm">
 							<input type="email" id="email" placeholder="Email address" required>
