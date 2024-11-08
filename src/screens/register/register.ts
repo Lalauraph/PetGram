@@ -1,4 +1,3 @@
-// register-screen.ts
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { dispatch } from '../../store/store';
@@ -62,6 +61,7 @@ class RegisterScreen extends HTMLElement {
 						align-items: center;
 						height: 100vh;
 						background-color: #FFF0CE;
+						padding: 20px;
 					}
 
 					.register-modal {
@@ -126,6 +126,28 @@ class RegisterScreen extends HTMLElement {
 						cursor: pointer;
 						font-family: 'Poppins', sans-serif;
 						font-weight: bold;
+					}
+
+					/* Estilos responsivos para pantallas más pequeñas */
+					@media (max-width: 600px) {
+						.register-modal {
+							width: 90%;
+							padding: 20px;
+						}
+
+						.register-title {
+							font-size: 20px;
+						}
+
+						button[type="submit"] {
+							width: 80%;
+							padding: 10px 0;
+							font-size: 14px;
+						}
+
+						.login-button {
+							font-size: 12px;
+						}
 					}
 				</style>
 				<div class="register-container">
