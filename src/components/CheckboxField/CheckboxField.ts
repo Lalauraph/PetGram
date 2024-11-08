@@ -25,11 +25,7 @@ export class CheckboxField extends HTMLElement {
                     input[type="checkbox"] {
                         margin-right: 10px;
                     }
-                    a {
-                        color: black;
-                        text-decoration: underline;
-                    }
-                </style>
+
                 <div class="checkbox-container">
                     <input type="checkbox">
                     <label>${this.label}</label>
