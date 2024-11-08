@@ -3,7 +3,6 @@ import { PostCardShape, Screens } from '../../types/types';
 import { profileBanner, postCard, welcomeMessage, addPostButton, LogoutButton } from '../../components/exportComponents';
 import { navigate } from '../../store/actions';
 import '../../components/exportComponents';
-import { Profile } from '../../data/dataProfile';
 
 class Feed extends HTMLElement {
 	profileBanner: profileBanner[] = [];
