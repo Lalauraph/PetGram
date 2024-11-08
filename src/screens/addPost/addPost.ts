@@ -3,7 +3,7 @@ import { addPost } from '../../store/actions';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
 import { PostCardShape } from '../../types/types';
-import "../../components/exportComponents";
+import '../../components/exportComponents';
 
 class AddPostScreen extends HTMLElement {
 	imageSrc: string = '';

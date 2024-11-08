@@ -51,7 +51,7 @@ export class Landing extends HTMLElement {
 			}
 		}
 	}
-}
+} //falta hacer que los botones funcionen y me lleven a otra pantalla
 
 //exportar pantalla como elemento personalizado
 customElements.define('landing-screen', Landing);
