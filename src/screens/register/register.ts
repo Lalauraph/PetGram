@@ -92,14 +92,7 @@ class RegisterScreen extends HTMLElement {
 					}
 					.register-modal button:hover {
 						background-color: #218838;
-					}
-					.login-button {
-						background-color: #007bff;
-					}
-					.login-button:hover {
-						background-color: #0056b3;
-					}
-				</style>
+					
 				<div class="register-container">
 					<div class="register-modal">
 						<h1 class="register-title">Register</h1>
