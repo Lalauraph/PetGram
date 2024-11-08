@@ -14,13 +14,6 @@ export class CheckboxField extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
-                <style>
-                    .checkbox-container {
-                        display: flex;
-                        align-items: center;
-                        margin: 10px 0;
-                        color: white;
-                        font-size: 0.9em;
 
                 <div class="checkbox-container">
                     <input type="checkbox">
