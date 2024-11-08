@@ -93,6 +93,28 @@ class AddPostScreen extends HTMLElement {
 				color: #AC6BC5;
 		}
 
+	@media (max-width: 600px) {
+						.register-modal {
+							width: 90%;
+							padding: 20px;
+						}
+
+						.register-title {
+							font-size: 20px;
+						}
+
+						button[type="submit"] {
+							width: 80%;
+							padding: 10px 0;
+							font-size: 14px;
+						}
+
+						.login-button {
+							font-size: 12px;
+						}
+					}
+
+
 				</style>
 				<div class="container">
 					<h2>Add a New Post</h2>
