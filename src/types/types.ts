@@ -39,9 +39,22 @@ export default {
 	get,
 	set,
 };
-export type AppState = {
-	screen: Screens;
-};
+
+export interface PostCardShape {
+	id: string; // Asegúrate de tener un ID único para cada publicación
+	profilePicture: string;
+	postPicture: string;
+	name: string;
+	breed: string;
+	caption: string;
+}
+
+
+export interface AppState {
+    screen: Screens;
+    posts: PostCardShape[];
+    profile: User[]; // Asegúrate de que `profile` está definido como una lista de `User`
+}
 
 export enum NavigationActions {
 	'NAVIGATE' = 'NAVIGATE',
@@ -52,4 +65,40 @@ export interface NavigateAction {
 	payload: Screens;
 }
 
-export type Actions = NavigateAction;
+export enum PostActions {
+	ADD_POST = 'ADD_POST',
+	DELETE_POST = 'DELETE_POST',
+	UPDATE_POST = 'UPDATE_POST',
+}
+
+export interface AddPostAction {
+	action: PostActions.ADD_POST;
+	payload: PostCardShape;
+}
+
+export interface DeletePostAction {
+	action: PostActions.DELETE_POST;
+	payload: { id: string };
+}
+
+export interface UpdatePostAction {
+	action: PostActions.UPDATE_POST;
+	payload: PostCardShape;
+}
+
+export type Actions = NavigateAction | AddPostAction | DeletePostAction | UpdatePostAction;
+
+// types.ts
+export interface PostCardElement extends HTMLElement {
+	profilePicture: string;
+	postPicture: string;
+	name: string;
+	breed: string;
+	caption: string;
+}
+
+// types.ts
+export interface User {
+    profilePic: string;
+    name: string;
+}

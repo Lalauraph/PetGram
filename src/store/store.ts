@@ -3,7 +3,9 @@ import Storage, { PersistanceKeys } from '../utils/storage';
 import { Actions, AppState, Observer, Screens } from '../types/types';
 
 const emptyState: AppState = {
-	screen: Screens.LANDING,
+	screen: Screens.LOGIN,
+	posts: [],
+	profile: [], // Agrega `profile` como arreglo vacío si se inicializa vacío
 };
 
 // 1. Crear el estado global appState: es un objeto con propiedades, estado actual: inicia en pantalla de landing

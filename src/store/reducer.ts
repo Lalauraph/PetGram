@@ -1,14 +1,31 @@
-import { Actions, AppState, NavigationActions } from '../types/types';
+import { Actions, AppState, NavigationActions, PostActions } from '../types/types';
 
-//se crea un reducer para lo que le dije en el estado global: recibe dos cosas: accion y clon
 export const reducer = (currentAction: Actions, currentState: AppState): AppState => {
-	const { action, payload } = currentAction; //payload es el nuevo valor
+	const { action, payload } = currentAction;
 
 	switch (action) {
 		case NavigationActions.NAVIGATE:
 			return {
 				...currentState,
-				screen: payload, //de lo que estaba en el estado actual editar el background color
+				screen: payload,
+			};
+
+		case PostActions.ADD_POST:
+			return {
+				...currentState,
+				posts: [...currentState.posts, payload], // Agrega una nueva publicación
+			};
+
+		case PostActions.DELETE_POST:
+			return {
+				...currentState,
+				posts: currentState.posts.filter((post) => post.id !== payload.id), // Elimina una publicación por ID
+			};
+
+		case PostActions.UPDATE_POST:
+			return {
+				...currentState,
+				posts: currentState.posts.map((post) => post.id === payload.id ? payload : post), // Actualiza una publicación por ID
 			};
 
 		default:

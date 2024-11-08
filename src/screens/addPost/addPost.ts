@@ -1,68 +1,101 @@
-// Importar los componentes a usar
-import { profileBanner } from '../../components/exportComponents';
-import { selectFromDevice } from '../../components/exportComponents';
-import { descriptionField } from '../../components/exportComponents';
-import { welcomeMessage } from '../../components/exportComponents';
-import styles from './landing.css';
+import { dispatch } from '../../store/store';
+import { addPost } from '../../store/actions';
+import { navigate } from '../../store/actions';
+import { Screens } from '../../types/types';
+import { PostCardShape } from '../../types/types';
+import '../../components/exportComponents';
 
-import { Profile } from '../../data/dataProfile';
-
-// Crear el App container
-export class Landing extends HTMLElement {
-	profilebanner!: profileBanner;
-	selectfromdevice!: selectFromDevice;
-	descriptionfield!: descriptionField;
-	welcomemessage: welcomeMessage[] = [];
-	name?: string;
+class AddPostScreen extends HTMLElement {
+	imageSrc: string = '';
+	description: string = '';
 
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-
-		// Crear componente profileBanner
-		this.profilebanner = document.createElement('profile-banner') as profileBanner;
-
-		// Crear el componente select from device
-		this.selectfromdevice = document.createElement('selectfrom-device') as selectFromDevice;
-
-		//crear el componente descriptionfield
-		this.descriptionfield = document.createElement('description-field') as descriptionField;
-
-		//crear el componente welcomeMessage y pushearle el username de la data
-		Profile.forEach((user) => {
-			const welcomeMessage = document.createElement('welcome-message') as welcomeMessage;
-			welcomeMessage.name = user.name;
-			this.welcomemessage.push(welcomeMessage);
-		});
+		this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+		this.handleAddPost = this.handleAddPost.bind(this);
+		this.handleImageSelect = this.handleImageSelect.bind(this);
 	}
 
 	connectedCallback() {
 		this.render();
 	}
 
+	handleDescriptionChange(event: Event) {
+		const target = event.target as HTMLInputElement;
+		this.description = target.value;
+	}
+
+	handleImageSelect(imageUrl: string) {
+		this.imageSrc = imageUrl;
+	}
+
+	handleAddPost() {
+		const newPost: PostCardShape = {
+			id: Math.random().toString(36).substr(2, 9),
+			profilePicture: 'https://imgur.com/13RUNz5.png',
+			postPicture: this.imageSrc,
+			name: 'User',
+			breed: 'Unknown',
+			caption: this.description,
+		};
+
+		dispatch(addPost(newPost));
+		dispatch(navigate(Screens.FEED)); // Redirige a Feed después de agregar el post
+	}
+
 	render() {
-		// agregar los componentes al DOM
-		{
-			if (this.shadowRoot) {
-				this.shadowRoot.innerHTML = `
-					<style>
-					${styles}
-					</style>
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+				<style>
+					.container {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						padding: 20px;
+					}
+					#addPostButton {
+						margin-top: 20px;
+						padding: 10px 20px;
+						background-color: #f39c12;
+						color: white;
+						border: none;
+						border-radius: 5px;
+						cursor: pointer;
+					}
+					#addPostButton:hover {
+						background-color: #e67e22;
+					}
+					.description-input {
+						margin-top: 20px;
+						padding: 10px;
+						width: 100%;
+						max-width: 500px;
+						border: 1px solid #ccc;
+						border-radius: 5px;
+					}
+				</style>
+				<div class="container">
+					<h2>Add a New Post</h2>
+					<select-from-device id="imageUploader"></select-from-device>
+					<textarea class="description-input" placeholder="Add a description about yourself!"></textarea>
+					<button id="addPostButton">Add Post</button>
+				</div>
+			`;
 
-					<div class="addPost-container">
-						<profile-banner></profile-banner>
-						<welcome-message${this.name}></welcome-message>
-<selectfrom-device></selectfrom-device>
-<description-field></description-field>
+			const descriptionInput = this.shadowRoot.querySelector('.description-input') as HTMLTextAreaElement;
+			const addPostButton = this.shadowRoot.querySelector('#addPostButton') as HTMLButtonElement;
+			const imageUploader = this.shadowRoot.querySelector('#imageUploader') as any;
 
-						</div>
-					</div>
-				`;
-			}
+			descriptionInput.addEventListener('input', this.handleDescriptionChange);
+			addPostButton.addEventListener('click', this.handleAddPost);
+			imageUploader.addEventListener('fileSelected', (event: CustomEvent) => {
+				this.handleImageSelect(event.detail);
+			});
 		}
 	}
-} //falta hacer que los botones funcionen y me lleven a otra pantalla
+}
 
-//exportar pantalla como elemento personalizado
-customElements.define('landing-screen', Landing);
-export default Landing;
+customElements.define('add-post-screen', AddPostScreen);
+
+export default AddPostScreen;

@@ -1,5 +1,5 @@
 import styles from './loginButton.css';
-//no usa data
+
 export class LoginButton extends HTMLElement {
 	constructor() {
 		super();
@@ -13,11 +13,11 @@ export class LoginButton extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-             <style>
-          ${styles}
-        </style>
-                <button type="submit">Log in!</button>
-            `;
+				<style>
+					${styles}
+				</style>
+				<button id="loginButton" type="button">Log in!</button>
+			`;
 		}
 	}
 }

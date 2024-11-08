@@ -1,5 +1,5 @@
 import styles from './passwordField.css';
-//no usa data
+
 export class PasswordField extends HTMLElement {
 	constructor() {
 		super();
@@ -8,6 +8,12 @@ export class PasswordField extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+	}
+
+	// Método para obtener el valor del campo de entrada
+	getValue() {
+		const input = this.shadowRoot?.querySelector('#password') as HTMLInputElement;
+		return input?.value || '';
 	}
 
 	render() {
