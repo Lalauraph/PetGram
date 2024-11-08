@@ -70,11 +70,13 @@ class LoginScreen extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-
+   <style>
+        ${styles}
+      </style>
 
 				<link rel="stylesheet" href="./login.css">
 				<div class="login-container">
-					<petgram-banner></petgram-banner> <!-- Añade el banner aquí -->
+					<petgram-banner></petgram-banner>
 					<div class="login-modal">
 						<h1 class="title">Welcome Back!</h1>
 						<form id="loginForm">
