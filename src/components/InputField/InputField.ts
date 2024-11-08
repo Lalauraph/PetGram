@@ -17,11 +17,7 @@ export class InputField extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
                 <style>
-                    .input-container {
-                        margin: 10px 0;
-                    }
-
-                </style>
+                    ${require('./InputField.css').default}
                 <div class="input-container">
                     <label>${this.label}</label>
                     <input type="${this.type}">
