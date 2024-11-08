@@ -1,9 +1,9 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import './register.css';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
+import { InputField, CheckboxField, SignupButton } from '../../components/exportComponents';
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {

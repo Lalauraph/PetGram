@@ -12,7 +12,7 @@ export class SignupButton extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
              <style>
-                    ${require('./RegisterForm.css').default}
+                    ${require('./SignupButton.css').default}
                 </style>
                 <button type="button">SIGN UP</button>
             `;
