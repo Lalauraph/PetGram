@@ -14,7 +14,8 @@ export class CheckboxField extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
-
+                <style>
+                    ${require('./CheckboxField.css').default}
                 <div class="checkbox-container">
                     <input type="checkbox">
                     <label>${this.label}</label>
