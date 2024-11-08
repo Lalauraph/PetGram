@@ -26,12 +26,7 @@ export class InputField extends HTMLElement {
                         font-size: 0.9em;
                         margin-bottom: 5px;
                     }
-                    input {
-                        width: 100%;
-                        padding: 10px;
-                        border-radius: 20px;
-                        border: none;
-                    }
+
                 </style>
                 <div class="input-container">
                     <label>${this.label}</label>
