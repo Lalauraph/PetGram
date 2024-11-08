@@ -15,22 +15,7 @@ export class RegisterForm extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
-                <style>
-                    :host {
-                        display: block;
-                        background-color: #4da6ff;
-                        padding: 20px;
-                        border-radius: 10px;
-                        max-width: 400px;
-                        font-family: Arial, sans-serif;
-                        text-align: center;
-                    }
-                    h1 {
-                        color: white;
-                        font-size: 1.5em;
-                        margin-bottom: 20px;
-                    }
-                </style>
+
                 <h1>Join Petgram!</h1>
                 <input-field label="Email address"></input-field>
                 <input-field label="Username"></input-field>
