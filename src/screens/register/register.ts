@@ -4,6 +4,7 @@ import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
 import { InputField, CheckboxField, SignupButton } from '../../components/exportComponents';
+import styles from './register.css';
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -55,21 +56,20 @@ class RegisterScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-
-				 <div class="register-container">
-                    <div class="register-modal">
-                        <h1>Register</h1>
-                        <form id="registerForm">
-                            <input-field label="Email address"></input-field>
-                            <input-field label="Username"></input-field>
-                            <input-field label="Password" type="password"></input-field>
-                            <checkbox-field label="I’m at least 18 years old and accept the Terms of Use"></checkbox-field>
-                            <checkbox-field label="I accept the Privacy Policy and consent to the processing of my personal information in accordance with it"></checkbox-field>
-                            <signup-button></signup-button>
-                        </form>
-                        <login-button></login-button>
-                    </div>
-                </div>
+				<style>
+				${styles}
+				</style>
+				<div class="register-container">
+					<div class="register-modal">
+						<h1 class="register-title">Register</h1>
+						<form id="registerForm">
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="password" id="password" placeholder="Password" required>
+							<button type="submit">Register</button>
+						</form>
+						<button class="login-button" id="loginButton">Go to Login</button>
+					</div>
+				</div>
 			`;
 
 			const form = this.shadowRoot.querySelector('#registerForm');
