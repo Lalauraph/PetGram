@@ -80,6 +80,7 @@ class LoginScreen extends HTMLElement {
 					<div class="login-modal">
 						<h1 class="title">Welcome Back!</h1>
 						<form id="loginForm">
+            class="form"
 							<username-field id="username"></username-field>
 							<password-field id="password"></password-field>
 							<login-button></login-button>

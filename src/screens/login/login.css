@@ -1,16 +1,18 @@
 /* Contenedor general del login */
+
+
 .login-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #f5deb3; /* Fondo beige claro */
+	background-color: #f5deb3; 
 	position: relative;
 }
 
 /* Modal de inicio de sesión */
 .login-modal {
-	background-color: #42a5f5; /* Azul claro para el cuadro */
+	background-color: #42a5f5; 
 	padding: 2rem;
 	border-radius: 20px;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -18,15 +20,17 @@
 	text-align: center;
 }
 
-/* Título de bienvenida */
+
 .title {
 	font-size: 2rem;
 	color: #ffffff;
 	margin-bottom: 1.5rem;
 	font-weight: bold;
+	font-family: Raspberie, Serif;
+
 }
 
-/* Campo de entrada (input-field) */
+
 .input-container {
 	display: flex;
 	flex-direction: column;
@@ -50,7 +54,7 @@
 .login-button {
 	width: 80%;
 	padding: 0.75rem;
-	background-color: #ffa000; /* Naranja */
+	background-color: #ffa000; 
 	color: #ffffff;
 	border: none;
 	border-radius: 20px;
@@ -62,7 +66,7 @@
 }
 
 .login-button:hover {
-	background-color: #ff8c00; /* Un tono más oscuro de naranja */
+	background-color: #ff8c00; 
 }
 
 /* Enlace para registro */
@@ -72,6 +76,8 @@
 	margin-top: 1rem;
 	display: block;
 	font-size: 0.9rem;
+	font-family: Poppins, sans-serif;
+	font-weight: bold;
 }
 
 .link:hover {
