@@ -1,9 +1,6 @@
 import { appState, addObserver, dispatch } from '../../store/store';
 import { PostCardShape, Screens } from '../../types/types';
-import { profileBanner } from '../../components/exportComponents';
-import { postCard } from '../../components/exportComponents';
-import { welcomeMessage } from '../../components/exportComponents';
-import { addPostButton } from '../../components/exportComponents';
+import { profileBanner, postCard, welcomeMessage, addPostButton, LogoutButton } from '../../components/exportComponents';
 import { navigate } from '../../store/actions';
 import '../../components/exportComponents';
 import { Profile } from '../../data/dataProfile';
@@ -12,6 +9,7 @@ class Feed extends HTMLElement {
 	profileBanner: profileBanner[] = [];
 	welcomeMessage: welcomeMessage[] = [];
 	addPostButton!: addPostButton;
+	logoutButton!: LogoutButton; // Declaración del botón de logout
 
 	constructor() {
 		super();
@@ -38,6 +36,12 @@ class Feed extends HTMLElement {
 		this.addPostButton.addEventListener('click', () => {
 			dispatch(navigate(Screens.ADDPOST));
 		});
+
+		// Crear y configurar el botón de Logout
+		this.logoutButton = document.createElement('logout-button') as LogoutButton;
+		this.logoutButton.addEventListener('click', () => {
+			dispatch(navigate(Screens.LOGIN)); // Navegar a la pantalla de login al hacer clic
+		});
 	}
 
 	connectedCallback() {
@@ -57,6 +61,7 @@ class Feed extends HTMLElement {
 			});
 
 			this.shadowRoot?.appendChild(this.addPostButton);
+			this.shadowRoot?.appendChild(this.logoutButton); // Agregar el botón de logout al DOM
 
 			const columnDiv = document.createElement('div');
 			columnDiv.style.display = 'grid';
