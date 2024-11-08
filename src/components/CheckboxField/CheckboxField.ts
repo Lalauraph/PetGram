@@ -15,7 +15,17 @@ export class CheckboxField extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
                 <style>
-                    ${require('./CheckboxField.css').default}
+                    .checkbox-container {
+                        display: flex;
+                        align-items: center;
+                        margin: 10px 0;
+                        color: white;
+                        font-size: 0.9em;
+                    }
+                    input[type="checkbox"] {
+                        margin-right: 10px;
+                    }
+                </style>
                 <div class="checkbox-container">
                     <input type="checkbox">
                     <label>${this.label}</label>
