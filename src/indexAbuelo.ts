@@ -2,7 +2,7 @@ import { Observer } from './types/types';
 import { addObserver, dispatch, appState } from './store/store';
 import { Screens } from './types/types';
 import './screens/exportScreens';
-import { PostCard } from './data/dataPostCard';
+
 import { addPost } from './store/actions';
 
 // Agregar publicaciones de ejemplo solo si el store está vacío
