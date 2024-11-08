@@ -89,9 +89,7 @@ class RegisterScreen extends HTMLElement {
 						border: none;
 						border-radius: 4px;
 						cursor: pointer;
-					}
-					.register-modal button:hover {
-						background-color: #218838;
+
 					
 				<div class="register-container">
 					<div class="register-modal">
