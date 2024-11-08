@@ -52,7 +52,9 @@ class AddPostScreen extends HTMLElement {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
-						padding: 20px;
+						padding: 90x;
+						font-family: 'Poppins', sans-serif;
+						
 					}
 					#addPostButton {
 						margin-top: 20px;
@@ -62,9 +64,12 @@ class AddPostScreen extends HTMLElement {
 						border: none;
 						border-radius: 5px;
 						cursor: pointer;
+						font-family: 'Poppins', sans-serif;
 					}
 					#addPostButton:hover {
 						background-color: #e67e22;
+						font-family: 'Poppins', sans-serif;
+					
 					}
 					.description-input {
 						margin-top: 20px;
@@ -73,7 +78,21 @@ class AddPostScreen extends HTMLElement {
 						max-width: 500px;
 						border: 1px solid #ccc;
 						border-radius: 5px;
+						font-family: 'Poppins', sans-serif;
 					}
+		. description-input {
+			margin-top: 20px;
+			font-size: 16px;
+			font-family: 'Poppins', sans-serif;
+			color: #AC6BC5;
+			}
+
+			h2 {
+				font-size: 24px;
+				font-family: 'Raspberie', serif;
+				color: #AC6BC5;
+		}
+
 				</style>
 				<div class="container">
 					<h2>Add a New Post</h2>
