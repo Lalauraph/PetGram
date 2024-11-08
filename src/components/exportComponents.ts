@@ -14,6 +14,3 @@ export { singleBanner, AttributeBanner } from './singleBanner/singleBanner';
 export { userDescription, AttributeUser } from './userDescription/userDescription';
 export { UsernameField } from './UsernameField/UsernameField';
 export { welcomeMessage, AttributeMessage } from './welcomeMessage/welcomeMessage';
-export { InputField } from './InputField/InputField';
-export { CheckboxField } from './CheckboxField/CheckboxField';
-export { SignupButton } from './SignupButton/SignupButton';
