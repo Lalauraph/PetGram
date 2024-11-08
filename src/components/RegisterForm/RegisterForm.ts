@@ -15,6 +15,8 @@ export class RegisterForm extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
+                <style>
+                    ${require('./RegisterForm.css').default}
 
                 <h1>Join Petgram!</h1>
                 <input-field label="Email address"></input-field>
