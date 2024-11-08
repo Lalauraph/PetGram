@@ -1,16 +1,16 @@
 export class SignupButton extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+	}
 
-    connectedCallback() {
-        this.render();
-    }
+	connectedCallback() {
+		this.render();
+	}
 
-    render() {
-        if (this.shadowRoot) {
-            this.shadowRoot.innerHTML = `
+	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
                 <style>
                     button {
                         background-color: #ffcc00;
@@ -24,11 +24,10 @@ export class SignupButton extends HTMLElement {
                         margin-top: 15px;
                     }
                 </style>
-                <button type="button">SIGN UP</button>
+                <button type="button">Sign Up!</button>
             `;
-        }
-    }
+		}
+	}
 }
 
 customElements.define('signup-button', SignupButton);
-
