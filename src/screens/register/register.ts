@@ -54,7 +54,8 @@ class RegisterScreen extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 
-			
+				<style>
+					${require('./register.css').default}
 				<div class="register-container">
 					<div class="register-modal">
 						<h1 class="register-title">Register</h1>
