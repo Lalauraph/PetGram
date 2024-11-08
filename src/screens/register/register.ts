@@ -1,10 +1,9 @@
+// register-screen.ts
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
-import { InputField, CheckboxField, SignupButton } from '../../components/exportComponents';
-import styles from './register.css';
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -20,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-//Crear clase de pantalla
+// Crear clase de pantalla
 class RegisterScreen extends HTMLElement {
 	constructor() {
 		super();
@@ -33,7 +32,7 @@ class RegisterScreen extends HTMLElement {
 		this.render();
 	}
 
-	//petición
+	// Petición
 	async handleRegister(event: Event) {
 		event.preventDefault();
 		const email = this.shadowRoot?.querySelector<HTMLInputElement>('#email')?.value || '';
@@ -44,7 +43,7 @@ class RegisterScreen extends HTMLElement {
 			dispatch(navigate(Screens.FEED));
 			alert('Registro exitoso');
 		} catch (error: any) {
-			console.error('Error during registration:', error);
+			console.error('Error durante el registro:', error);
 			alert('Error al registrarse: ' + error.message);
 		}
 	}
@@ -57,17 +56,88 @@ class RegisterScreen extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 				<style>
-				${styles}
+					.register-container {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						height: 100vh;
+						background-color: #FFF0CE;
+					}
+
+					.register-modal {
+						background-color: #4BACD7;
+						padding: 30px;
+						border-radius: 15px;
+						width: 350px;
+						box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+						text-align: center;
+						font-family: 'Poppins', sans-serif;
+					}
+
+					.register-title {
+						color: #ffffff;
+						font-size: 24px;
+						font-weight: bold;
+						margin-bottom: 20px;
+						font-family: Raspberie, Serif;
+					}
+
+					input[type="email"],
+					input[type="text"],
+					input[type="password"] {
+						width: 100%;
+						padding: 10px;
+						margin: 10px 0;
+						border: none;
+						border-radius: 25px;
+						box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+					}
+
+					input::placeholder {
+						color: #a1a1a1;
+					}
+
+					button[type="submit"] {
+						background-color: #fca326;
+						color: white;
+						border: none;
+						padding: 12px 0;
+						border-radius: 25px;
+						width: 50%;
+						cursor: pointer;
+						font-size: 16px;
+						font-weight: bold;
+						box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+						transition: background-color 0.3s ease;
+						margin-top: 15px;
+					}
+
+					button[type="submit"]:hover {
+						background-color: #e3941c;
+					}
+
+					.login-button {
+						background: none;
+						border: none;
+						color: #FFFFFF;
+						margin-top: 15px;
+						font-size: 14px;
+						text-decoration: underline;
+						cursor: pointer;
+						font-family: 'Poppins', sans-serif;
+						font-weight: bold;
+					}
 				</style>
 				<div class="register-container">
 					<div class="register-modal">
-						<h1 class="register-title">Register</h1>
+						<h1 class="register-title">Join Petgram!</h1>
 						<form id="registerForm">
-							<input type="email" id="email" placeholder="Email" required>
+							<input type="email" id="email" placeholder="Email address" required>
+							<input type="text" id="username" placeholder="Username" required>
 							<input type="password" id="password" placeholder="Password" required>
-							<button type="submit">Register</button>
+							<button type="submit">Sign Up!</button>
 						</form>
-						<button class="login-button" id="loginButton">Go to Login</button>
+						<button class="login-button" id="loginButton">Already have an account? <br> Enter here!</button>
 					</div>
 				</div>
 			`;
