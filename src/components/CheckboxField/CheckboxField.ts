@@ -21,10 +21,6 @@ export class CheckboxField extends HTMLElement {
                         margin: 10px 0;
                         color: white;
                         font-size: 0.9em;
-                    }
-                    input[type="checkbox"] {
-                        margin-right: 10px;
-                    }
 
                 <div class="checkbox-container">
                     <input type="checkbox">
