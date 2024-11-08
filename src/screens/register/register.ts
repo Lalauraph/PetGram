@@ -71,12 +71,12 @@ class RegisterScreen extends HTMLElement {
 			`;
 
 			const form = this.shadowRoot.querySelector('#registerForm');
-			form?.addEventListener('submit', this.handleRegister);
+            form?.addEventListener('submit', this.handleRegister);
 
-			const loginButton = this.shadowRoot.querySelector('#loginButton');
-			loginButton?.addEventListener('click', this.navigateToLogin);
-		}
-	}
+            const loginButton = this.shadowRoot.querySelector('#loginButton');
+            loginButton?.addEventListener('click', this.navigateToLogin);
+        }
+    }
 }
 
 customElements.define('register-screen', RegisterScreen);
