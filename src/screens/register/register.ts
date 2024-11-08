@@ -67,10 +67,6 @@ class RegisterScreen extends HTMLElement {
 						padding: 2rem;
 						border-radius: 8px;
 						box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-					}
-					.register-modal h1 {
-						text-align: center;
-						margin-bottom: 1rem;
 
 
 
