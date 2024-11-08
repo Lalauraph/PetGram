@@ -18,3 +18,4 @@ export { InputField } from './InputField/InputField';
 export { CheckboxField } from './CheckboxField/CheckboxField';
 export { SignupButton } from './SignupButton/SignupButton';
 export { LogoutButton } from './logoutButton/logoutButton';
+export { PetgramBanner } from './petgramBanner/petgramBanner';
