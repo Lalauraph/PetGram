@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { dispatch } from '../../store/store';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/types';
+import { introBanner } from '../../components/introBanner/introbanner';
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -129,6 +130,8 @@ class RegisterScreen extends HTMLElement {
 					}
 				</style>
 				<div class="register-container">
+						<intro-banner></intro-banner>
+
 					<div class="register-modal">
 						<h1 class="register-title">Join Petgram!</h1>
 						<form id="registerForm">

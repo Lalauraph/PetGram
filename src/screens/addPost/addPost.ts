@@ -76,6 +76,7 @@ class AddPostScreen extends HTMLElement {
 					}
 				</style>
 				<div class="container">
+			   <intro-banner></intro-banner>
 					<h2>Add a New Post</h2>
 					<select-from-device id="imageUploader"></select-from-device>
 					<textarea class="description-input" placeholder="Add a description about yourself!"></textarea>
