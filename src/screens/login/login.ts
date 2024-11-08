@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import styles from "./login.css";
 import { dispatch } from "../../store/store";
@@ -7,9 +6,7 @@ import { navigate } from "../../store/actions";
 import { Screens } from "../../types/types";
 import { UsernameField } from "../../components/exportComponents";
 import { PasswordField } from "../../components/exportComponents";
-// import '../components/UsernameField'; // Importa el componente de campo de usuario
-// import '../components/PasswordField'; // Importa el componente de campo de contraseña
-// import '../components/LoginButton'; // Importa el componente de botón de inicio de sesión
+export {PetgramBanner} from '../../components/exportComponents';
 
 // Configuración de Firebase (reemplaza con tus credenciales)
 const firebaseConfig = {
@@ -41,7 +38,6 @@ class LoginScreen extends HTMLElement {
     console.log("handleLogin");
     event.preventDefault();
 
-    // Usar Type Assertion para informar a TypeScript sobre los tipos personalizados
     const emailElement = this.shadowRoot?.querySelector(
       "username-field"
     ) as unknown as UsernameField;
@@ -49,7 +45,6 @@ class LoginScreen extends HTMLElement {
       "password-field"
     ) as unknown as PasswordField;
 
-    // Obtener valores usando getValue()
     const email = emailElement?.getValue() || "";
     const password = passwordElement?.getValue() || "";
 
@@ -75,11 +70,11 @@ class LoginScreen extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-				<style>
-					${styles}
-				</style>
+
+
 				<link rel="stylesheet" href="./login.css">
 				<div class="login-container">
+					<petgram-banner></petgram-banner> <!-- Añade el banner aquí -->
 					<div class="login-modal">
 						<h1 class="title">Welcome Back!</h1>
 						<form id="loginForm">
@@ -92,7 +87,6 @@ class LoginScreen extends HTMLElement {
 				</div>
 			`;
 
-      // Escucha el evento click en login-button para disparar handleLogin
       const loginButton = this.shadowRoot.querySelector("login-button");
       loginButton?.addEventListener("click", this.handleLogin);
 
