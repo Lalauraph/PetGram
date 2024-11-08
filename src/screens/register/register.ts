@@ -79,16 +79,7 @@ class RegisterScreen extends HTMLElement {
 						padding: 0.5rem;
 						border: 1px solid #ccc;
 						border-radius: 4px;
-					}
-					.register-modal button {
-						width: 100%;
-						padding: 0.5rem;
-						margin-bottom: 0.5rem;
-						background-color: #28a745;
-						color: white;
-						border: none;
-						border-radius: 4px;
-						cursor: pointer;
+
 
 					
 				<div class="register-container">
