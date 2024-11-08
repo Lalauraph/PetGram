@@ -53,14 +53,7 @@ class RegisterScreen extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-				<style>
-					/* Estilos básicos */
-					.register-container {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						height: 100vh;
-						background-color: #f0f0f0;
+
 			
 				<div class="register-container">
 					<div class="register-modal">
