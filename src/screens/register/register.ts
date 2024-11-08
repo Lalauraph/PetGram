@@ -54,19 +54,20 @@ class RegisterScreen extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 
-				<style>
-					${require('./register.css').default}
-				<div class="register-container">
-					<div class="register-modal">
-						<h1 class="register-title">Register</h1>
-						<form id="registerForm">
-							<input type="email" id="email" placeholder="correo" required>
-							<input type="password" id="password" placeholder="Password" required>
-							<button type="submit">Register</button>
-						</form>
-						<button class="login-button" id="loginButton">Go to caracas</button>
-					</div>
-				</div>
+				 <div class="register-container">
+                    <div class="register-modal">
+                        <h1>Register</h1>
+                        <form id="registerForm">
+                            <input-field label="Email address"></input-field>
+                            <input-field label="Username"></input-field>
+                            <input-field label="Password" type="password"></input-field>
+                            <checkbox-field label="I’m at least 18 years old and accept the Terms of Use"></checkbox-field>
+                            <checkbox-field label="I accept the Privacy Policy and consent to the processing of my personal information in accordance with it"></checkbox-field>
+                            <signup-button></signup-button>
+                        </form>
+                        <button class="login-button" id="loginButton">Go to Login</button>
+                    </div>
+                </div>
 			`;
 
 			const form = this.shadowRoot.querySelector('#registerForm');
