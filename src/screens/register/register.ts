@@ -61,16 +61,7 @@ class RegisterScreen extends HTMLElement {
 						align-items: center;
 						height: 100vh;
 						background-color: #f0f0f0;
-					}
-					.register-modal {
-						background-color: white;
-						padding: 2rem;
-						border-radius: 8px;
-						box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-
-
-					
+			
 				<div class="register-container">
 					<div class="register-modal">
 						<h1 class="register-title">Register</h1>
