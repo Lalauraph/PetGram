@@ -20,12 +20,6 @@ export class InputField extends HTMLElement {
                     .input-container {
                         margin: 10px 0;
                     }
-                    label {
-                        color: white;
-                        display: block;
-                        font-size: 0.9em;
-                        margin-bottom: 5px;
-                    }
 
                 </style>
                 <div class="input-container">
