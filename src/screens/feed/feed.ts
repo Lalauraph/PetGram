@@ -1,80 +1,85 @@
-import { PostCard } from '../../data/dataPostCard';
-import { Profile } from '../../data/dataProfile';
+import { appState, addObserver, dispatch } from '../../store/store';
+import { PostCardShape, Screens } from '../../types/types';
 import { profileBanner } from '../../components/exportComponents';
 import { postCard } from '../../components/exportComponents';
 import { welcomeMessage } from '../../components/exportComponents';
 import { addPostButton } from '../../components/exportComponents';
+import { navigate } from '../../store/actions';
 import '../../components/exportComponents';
+import { Profile } from '../../data/dataProfile';
 
-// Crear el App container
 class Feed extends HTMLElement {
-	postCard: postCard[] = [];
 	profileBanner: profileBanner[] = [];
 	welcomeMessage: welcomeMessage[] = [];
 	addPostButton!: addPostButton;
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
+		this.setupHeaderElements();
+	}
 
-		// Recorrer la data
+	setupHeaderElements() {
 		Profile.forEach((user) => {
-			//crear el componente
-			const profileBanner = document.createElement('profile-banner') as profileBanner;
-			profileBanner.profilePic = user.profilePic;
-			profileBanner.name = user.name;
-			this.profileBanner.push(profileBanner);
-		});
-
-		PostCard.forEach((card) => {
-			const postCard = document.createElement('post-card') as postCard;
-			postCard.profilePicture = card.profilePicture;
-			postCard.postPicture = card.postPicture;
-			postCard.name = card.name;
-			postCard.breed = card.breed;
-			postCard.caption = card.caption;
-			this.postCard.push(postCard);
+			const banner = document.createElement('profile-banner') as profileBanner;
+			banner.profilePic = user.profilePic;
+			banner.name = user.name;
+			this.profileBanner.push(banner);
 		});
 
 		Profile.forEach((user) => {
-			const welcomeMessage = document.createElement('welcome-message') as welcomeMessage;
-			welcomeMessage.name = user.name;
-			this.welcomeMessage.push(welcomeMessage);
+			const message = document.createElement('welcome-message') as welcomeMessage;
+			message.name = user.name;
+			this.welcomeMessage.push(message);
 		});
 
 		this.addPostButton = document.createElement('add-post-button') as addPostButton;
+		this.addPostButton.addEventListener('click', () => {
+			dispatch(navigate(Screens.ADDPOST));
+		});
 	}
 
 	connectedCallback() {
-		this.renderizar();
+		this.render();
 	}
-	renderizar() {
-		console.log('renderizando');
+
+	render() {
 		if (this.shadowRoot) {
-			this.profileBanner.forEach((profileBanner) => {
-				this.shadowRoot?.appendChild(profileBanner);
+			this.shadowRoot.innerHTML = '';
+
+			this.profileBanner.forEach((banner) => {
+				this.shadowRoot?.appendChild(banner);
 			});
-			this.welcomeMessage.forEach((welcomeMessage) => {
-				this.shadowRoot?.appendChild(welcomeMessage);
+
+			this.welcomeMessage.forEach((message) => {
+				this.shadowRoot?.appendChild(message);
 			});
+
 			this.shadowRoot?.appendChild(this.addPostButton);
 
-			// Crear un div para envolver las tarjetas
 			const columnDiv = document.createElement('div');
-			columnDiv.style.display = 'grid'; // Usamos grid para el diseño de las tarjetas
-			columnDiv.style.gridTemplateColumns = '1fr'; // Por defecto, una columna
-			columnDiv.style.gap = '15px'; // Espacio entre las tarjetas
-			columnDiv.style.justifyContent = 'center'; // Centramos el grid
-			columnDiv.style.margin = '0 auto'; // Centramos el contenedor
-			columnDiv.style.maxWidth = '1300px'; // Ancho máximo del contenedor
-			columnDiv.style.padding = '20px'; // Espaciado interno
+			columnDiv.style.display = 'grid';
+			columnDiv.style.gridTemplateColumns = '1fr';
+			columnDiv.style.gap = '15px';
+			columnDiv.style.justifyContent = 'center';
+			columnDiv.style.margin = '0 auto';
+			columnDiv.style.maxWidth = '1300px';
+			columnDiv.style.padding = '20px';
 
 			const mediaQuery = window.matchMedia('(min-width: 1024px)');
 			if (mediaQuery.matches) {
-				columnDiv.style.gridTemplateColumns = 'repeat(2, 1fr)'; // Cambiamos a dos columnas en pantallas grandes
+				columnDiv.style.gridTemplateColumns = 'repeat(2, 1fr)';
 			}
 
-			this.postCard.forEach((postCard) => {
-				columnDiv.appendChild(postCard);
+			appState.posts.forEach((post: PostCardShape) => {
+				const cardElement = document.createElement('post-card') as postCard;
+				cardElement.profilePicture = post.profilePicture;
+				cardElement.postPicture = post.postPicture;
+				cardElement.name = post.name;
+				cardElement.breed = post.breed;
+				cardElement.caption = post.caption;
+				columnDiv.appendChild(cardElement);
 			});
 
 			this.shadowRoot.appendChild(columnDiv);

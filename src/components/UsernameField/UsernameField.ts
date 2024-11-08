@@ -1,5 +1,5 @@
 import styles from './usernameField.css';
-//no usa data
+
 export class UsernameField extends HTMLElement {
 	constructor() {
 		super();
@@ -8,6 +8,12 @@ export class UsernameField extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+	}
+
+	// Método para obtener el valor del campo de entrada
+	getValue() {
+		const input = this.shadowRoot?.querySelector('#username') as HTMLInputElement;
+		return input?.value || '';
 	}
 
 	render() {
