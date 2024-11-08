@@ -1,4 +1,5 @@
-// petgramBanner.ts
+import styles from './petgramBanner.css';
+
 export class PetgramBanner extends HTMLElement {
     constructor() {
         super();
@@ -12,7 +13,7 @@ export class PetgramBanner extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
-                <link rel="stylesheet" href="./petgramBanner.css">
+               <link rel="stylesheet" href="./petgramBanner.css">
                 <div class="banner">
                     <div class="logo"></div>
                     <span>PetGram</span>

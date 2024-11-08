@@ -83,3 +83,24 @@
 .link:hover {
 	text-decoration: underline;
 }
+
+
+.login-button-style {
+    background-color: #ffac33; /* Fondo amarillo/naranja */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Hace que el botón ocupe el ancho completo del formulario */
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-button-style:hover {
+    background-color: #42a5f5; /* Color al pasar el mouse */
+}

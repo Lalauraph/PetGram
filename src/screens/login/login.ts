@@ -74,20 +74,20 @@ class LoginScreen extends HTMLElement {
         ${styles}
       </style>
 
-				<link rel="stylesheet" href="./login.css">
-				<div class="login-container">
-					<petgram-banner></petgram-banner>
-					<div class="login-modal">
-						<h1 class="title">Welcome Back!</h1>
-						<form id="loginForm">
-            class="form"
-							<username-field id="username"></username-field>
-							<password-field id="password"></password-field>
-							<login-button></login-button>
-						</form>
-						<span class="link" id="registerButton">Don't have an account yet? <br> Create one!</span>
-					</div>
-				</div>
+			<link rel="stylesheet" href="./login.css">
+<div class="login-container">
+    <petgram-banner></petgram-banner>
+    <div class="login-modal">
+        <h1 class="title">Welcome Back!</h1>
+        <form id="loginForm">
+            <username-field id="username"></username-field>
+            <password-field id="password"></password-field>
+            <login-button class="login-button-style"></login-button>
+        </form>
+        <span class="link" id="registerButton">Don't have an account yet? <br> Create one!</span>
+    </div>
+</div>
+
 			`;
 
       const loginButton = this.shadowRoot.querySelector("login-button");
